@@ -1,0 +1,22 @@
+{
+  "name": "Claude Flow",
+  "version": "3.0.0",
+  "description": "LLM orchestration framework for building complex AI workflows with multi-agent swarms",
+  "type": "framework",
+  "tech": ["TypeScript", "Node.js", "LangChain", "MCP"],
+  "features": [
+    "Multi-agent swarm orchestration",
+    "Tool chaining and function calling",
+    "Persistent memory integration",
+    "Workflow visualization",
+    "Execution tracing"
+  ],
+  "status": "ready",
+  "metrics": {
+    "score": 0.88,
+    "files": 89,
+    "lines": 15620
+  },
+  "demo_url": "https://claude-flow.demo",
+  "github": "https://github.com/example/claude-flow"
+}

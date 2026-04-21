@@ -1,0 +1,22 @@
+{
+  "name": "Reelforge",
+  "version": "1.0.0",
+  "description": "AI-powered infographic video pipeline for creating 9:16 vertical videos from trending topics",
+  "type": "webapp",
+  "tech": ["TypeScript", "React", "Remotion", "Claude SDK", "ElevenLabs"],
+  "features": [
+    "Automatic trending topic scouting via Google Trends",
+    "AI script generation with Claude",
+    "Text-to-speech synthesis with ElevenLabs",
+    "Video rendering with Remotion",
+    "Automated webhook publishing"
+  ],
+  "status": "ready",
+  "metrics": {
+    "score": 0.94,
+    "files": 24,
+    "lines": 4820
+  },
+  "demo_url": "https://reelforge.demo",
+  "github": "https://github.com/example/reelforge"
+}
