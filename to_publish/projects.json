@@ -1,9 +1,9 @@
 {
   "projects": [
-        {
+    {
       "name": "BYD Interactive Presentation",
       "version": "1.0.0",
-      "description": "Full-screen interactive catalog and presentation for the BYD ATTO 2 DM-i European Sales Training.",
+      "description": "Interactive presentation application for BYD ATTO 2 DM-i European Sales Training. Optimized for full-screen kiosks with tactile navigation.",
       "type": "presentation",
       "tech": ["React", "Vite", "Tailwind CSS", "Swiper"],
       "github": "https://github.com/example/byd-presentation",
@@ -12,7 +12,7 @@
     {
       "name": "Farmacia Granda",
       "version": "0.1.0",
-      "description": "Modern e-commerce and informative web platform for a pharmacy.",
+      "description": "Modern e-commerce and health platform for a neighborhood pharmacy, bridging the gap between traditional healthcare and digital convenience.",
       "type": "webapp",
       "tech": ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
       "github": "https://github.com/example/farmacia-granda",
@@ -21,7 +21,7 @@
     {
       "name": "Mise en Place",
       "version": "0.0.1",
-      "description": "Kitchen and recipe management application powered by Gemini AI and SvelteKit.",
+      "description": "Smart kitchen and recipe manager powered by Gemini AI. Extracts structured data from text or images to optimize culinary workflows.",
       "type": "webapp",
       "tech": ["SvelteKit", "Vite", "Drizzle ORM", "SQLite", "Gemini AI"],
       "github": "https://github.com/example/mise-en-place",
@@ -30,7 +30,7 @@
     {
       "name": "Reelforge",
       "version": "1.0.0",
-      "description": "AI-powered infographic video pipeline for creating 9:16 vertical videos from trending topics.",
+      "description": "AI-powered programmatic video pipeline using Remotion. Automatically creates high-impact vertical infographics from trending data.",
       "type": "webapp",
       "tech": ["TypeScript", "React", "Remotion", "Claude SDK"],
       "github": "https://github.com/example/reelforge",
@@ -39,7 +39,7 @@
     {
       "name": "Automated Content Channel",
       "version": "1.0.0",
-      "description": "Fully automated short-form video creation pipeline using multi-agent swarms to produce cinematic content.",
+      "description": "Headless video production pipeline using multi-agent swarms. Orchestrates research, scriptwriting, and editing into an end-to-end automated flow.",
       "type": "automation",
       "tech": ["n8n", "Python", "Claude API", "Muapi.ai"],
       "github": "https://github.com/example/automated-content-channel",
@@ -48,11 +48,20 @@
     {
       "name": "Glow Dental",
       "version": "1.0.0",
-      "description": "Modern dental clinic SaaS platform featuring admin dashboards, appointment scheduling, and patient records.",
+      "description": "Cloud-native SaaS for dental clinic management. Streamlines patient records, appointments, and BI with a focus on code quality and TDD.",
       "type": "saas",
       "tech": ["Next.js", "TypeScript", "React Query", "Playwright"],
       "github": "https://github.com/example/glow-dental",
       "screenshot": "glow-dental/screenshot.png"
+    },
+    {
+      "name": "FutureLetter AI",
+      "version": "1.0.0",
+      "description": "Goal coaching app powered by AI. Write letters to your future self, set milestones, and receive intelligent encouragement.",
+      "type": "webapp",
+      "tech": ["React", "TypeScript", "Supabase", "OpenAI"],
+      "github": "https://github.com/example/future-letter-coach",
+      "screenshot": "future-letter-coach/screenshot.png"
     }
   ]
 }
