@@ -1,0 +1,58 @@
+{
+  "projects": [
+        {
+      "name": "BYD Interactive Presentation",
+      "version": "1.0.0",
+      "description": "Full-screen interactive catalog and presentation for the BYD ATTO 2 DM-i European Sales Training.",
+      "type": "presentation",
+      "tech": ["React", "Vite", "Tailwind CSS", "Swiper"],
+      "github": "https://github.com/example/byd-presentation",
+      "screenshot": "byd-presentation/screenshot.png"
+    },
+    {
+      "name": "Farmacia Granda",
+      "version": "0.1.0",
+      "description": "Modern e-commerce and informative web platform for a pharmacy.",
+      "type": "webapp",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
+      "github": "https://github.com/example/farmacia-granda",
+      "screenshot": "farmacia-granda/screenshot.png"
+    },
+    {
+      "name": "Mise en Place",
+      "version": "0.0.1",
+      "description": "Kitchen and recipe management application powered by Gemini AI and SvelteKit.",
+      "type": "webapp",
+      "tech": ["SvelteKit", "Vite", "Drizzle ORM", "SQLite", "Gemini AI"],
+      "github": "https://github.com/example/mise-en-place",
+      "screenshot": "mise-en-place/screenshot.png"
+    },
+    {
+      "name": "Reelforge",
+      "version": "1.0.0",
+      "description": "AI-powered infographic video pipeline for creating 9:16 vertical videos from trending topics.",
+      "type": "webapp",
+      "tech": ["TypeScript", "React", "Remotion", "Claude SDK"],
+      "github": "https://github.com/example/reelforge",
+      "screenshot": "reelforge/screenshot.png"
+    },
+    {
+      "name": "Automated Content Channel",
+      "version": "1.0.0",
+      "description": "Fully automated short-form video creation pipeline using multi-agent swarms to produce cinematic content.",
+      "type": "automation",
+      "tech": ["n8n", "Python", "Claude API", "Muapi.ai"],
+      "github": "https://github.com/example/automated-content-channel",
+      "screenshot": "automated-content-channel/screenshot.png"
+    },
+    {
+      "name": "Glow Dental",
+      "version": "1.0.0",
+      "description": "Modern dental clinic SaaS platform featuring admin dashboards, appointment scheduling, and patient records.",
+      "type": "saas",
+      "tech": ["Next.js", "TypeScript", "React Query", "Playwright"],
+      "github": "https://github.com/example/glow-dental",
+      "screenshot": "glow-dental/screenshot.png"
+    }
+  ]
+}
