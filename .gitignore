@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+.svelte-kit/
+/build
+/dist
+
+# Screenshots (generated at deploy time)
+to_publish/screenshots/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
