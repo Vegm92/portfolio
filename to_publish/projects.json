@@ -46,13 +46,13 @@
       "screenshot": "screenshots/automated-content-channel.png"
     },
     {
-      "name": "DentalBI",
+      "name": "AutoAffiliate",
       "version": "1.0.0",
-      "description": "Modern dental clinic SaaS platform with appointment scheduling, patient records, and analytics.",
+      "description": "AI-powered affiliate marketing platform that generates comprehensive product reviews using Anthropic Claude. Features SEO optimization, affiliate link management, and automated content creation.",
       "type": "webapp",
-      "tech": ["Next.js", "React", "Tailwind CSS", "PostgreSQL"],
-      "github": "https://github.com/Vegm92/dentalBI.git",
-      "screenshot": "screenshots/glow-dental.png"
+      "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Anthropic AI"],
+      "github": "https://github.com/Vegm92/AutoAffiliate.git",
+      "screenshot": "screenshots/automated-affiliate.png"
     }
   ]
 }
