@@ -6,8 +6,8 @@
       "description": "Interactive presentation application for BYD ATTO 2 DM-i European Sales Training. Optimized for full-screen kiosks with tactile navigation.",
       "type": "presentation",
       "tech": ["React", "Vite", "Tailwind CSS", "Swiper"],
-      "github": "https://github.com/example/byd-presentation",
-      "screenshot": "byd-presentation/screenshot.png"
+      "github": "https://github.com/Vegm92/byd.git",
+      "screenshot": "screenshots/byd-presentation.png"
     },
     {
       "name": "Farmacia Granda",
@@ -15,8 +15,8 @@
       "description": "Modern e-commerce and health platform for a neighborhood pharmacy, bridging the gap between traditional healthcare and digital convenience.",
       "type": "webapp",
       "tech": ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
-      "github": "https://github.com/example/farmacia-granda",
-      "screenshot": "farmacia-granda/screenshot.png"
+      "github": "https://github.com/Vegm92/farmacia-granda-web-rework.git",
+      "screenshot": "screenshots/farmacia-granda.png"
     },
     {
       "name": "Mise en Place",
@@ -24,8 +24,8 @@
       "description": "Smart kitchen and recipe manager powered by Gemini AI. Extracts structured data from text or images to optimize culinary workflows.",
       "type": "webapp",
       "tech": ["SvelteKit", "Vite", "Drizzle ORM", "SQLite", "Gemini AI"],
-      "github": "https://github.com/example/mise-en-place",
-      "screenshot": "mise-en-place/screenshot.png"
+      "github": "https://github.com/Vegm92/mise-en-place-sk.git",
+      "screenshot": "screenshots/mise-en-place.png"
     },
     {
       "name": "Reelforge",
@@ -33,35 +33,26 @@
       "description": "AI-powered programmatic video pipeline using Remotion. Automatically creates high-impact vertical infographics from trending data.",
       "type": "webapp",
       "tech": ["TypeScript", "React", "Remotion", "Claude SDK"],
-      "github": "https://github.com/example/reelforge",
-      "screenshot": "reelforge/screenshot.png"
+      "github": "https://github.com/Vegm92/infographic-video-generator.git",
+      "screenshot": "screenshots/reelforge.png"
     },
     {
       "name": "Automated Content Channel",
       "version": "1.0.0",
       "description": "Headless video production pipeline using multi-agent swarms. Orchestrates research, scriptwriting, and editing into an end-to-end automated flow.",
       "type": "automation",
-      "tech": ["n8n", "Python", "Claude API", "Muapi.ai"],
-      "github": "https://github.com/example/automated-content-channel",
-      "screenshot": "automated-content-channel/screenshot.png"
+      "tech": ["Python", "Claude API", "Muapi.ai"],
+      "github": "https://github.com/Vegm92/automated-content-channel.git",
+      "screenshot": "screenshots/automated-content-channel.png"
     },
     {
-      "name": "Glow Dental",
+      "name": "DentalBI",
       "version": "1.0.0",
-      "description": "Cloud-native SaaS for dental clinic management. Streamlines patient records, appointments, and BI with a focus on code quality and TDD.",
-      "type": "saas",
-      "tech": ["Next.js", "TypeScript", "React Query", "Playwright"],
-      "github": "https://github.com/example/glow-dental",
-      "screenshot": "glow-dental/screenshot.png"
-    },
-    {
-      "name": "FutureLetter AI",
-      "version": "1.0.0",
-      "description": "Goal coaching app powered by AI. Write letters to your future self, set milestones, and receive intelligent encouragement.",
+      "description": "Modern dental clinic SaaS platform with appointment scheduling, patient records, and analytics.",
       "type": "webapp",
-      "tech": ["React", "TypeScript", "Supabase", "OpenAI"],
-      "github": "https://github.com/example/future-letter-coach",
-      "screenshot": "future-letter-coach/screenshot.png"
+      "tech": ["Next.js", "React", "Tailwind CSS", "PostgreSQL"],
+      "github": "https://github.com/Vegm92/dentalBI.git",
+      "screenshot": "screenshots/glow-dental.png"
     }
   ]
 }
