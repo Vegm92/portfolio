@@ -1,0 +1,16 @@
+{
+  "stack": [
+    { "name": "TypeScript", "icon": "ri-command-line", "level": "Expert", "category": "Languages", "proficiency": 95 },
+    { "name": "Python", "icon": "ri-python-line", "level": "Advanced", "category": "Languages", "proficiency": 88 },
+    { "name": "JavaScript", "icon": "ri-javascript-line", "level": "Expert", "category": "Languages", "proficiency": 92 },
+    { "name": "Node.js", "icon": "ri-nodejs-line", "level": "Expert", "category": "Languages", "proficiency": 88 },
+    { "name": "React", "icon": "ri-reactjs-line", "level": "Expert", "category": "Frameworks", "proficiency": 92 },
+    { "name": "Next.js", "icon": "ri-nextjs-line", "level": "Advanced", "category": "Frameworks", "proficiency": 85 },
+    { "name": "Express.js", "icon": "ri-server-line", "level": "Advanced", "category": "Frameworks", "proficiency": 82 },
+    { "name": "Tailwind CSS", "icon": "ri-css3-line", "level": "Expert", "category": "Frameworks", "proficiency": 90 },
+    { "name": "Claude / Gemini", "icon": "ri-robot-3-line", "level": "Expert", "category": "AI & Infra", "proficiency": 95 },
+    { "name": "n8n / Automation", "icon": "ri-flow-chart", "level": "Advanced", "category": "AI & Infra", "proficiency": 87 },
+    { "name": "MongoDB", "icon": "ri-database-2-line", "level": "Advanced", "category": "AI & Infra", "proficiency": 80 },
+    { "name": "Docker / Vercel", "icon": "ri-instance-line", "level": "Intermediate", "category": "AI & Infra", "proficiency": 75 }
+  ]
+}

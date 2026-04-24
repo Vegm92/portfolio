@@ -130,4 +130,27 @@
 
     .carousel-controls { padding: 0 var(--space-xs); }
     .carousel-btn { width: 36px; height: 36px; }
+
+    /* Stack */
+    .stack {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .stack-groups { grid-template-columns: 1fr; }
+
+    /* Contact */
+    .contact {
+        padding: var(--space-3xl) var(--space-xl);
+    }
+
+    .contact-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Agent chatbot */
+    .agent-panel {
+        width: calc(100vw - 48px);
+    }
 }

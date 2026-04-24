@@ -12,6 +12,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700&family=Robotika:wght@400;700&display=swap" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
 </head>
 
 <body>
@@ -30,7 +31,9 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#carousel-projects">Projects</a>
+                <a href="#stack">Stack</a>
                 <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
             <a class="nav-cta" href="https://github.com/Vegm92" target="_blank" rel="noopener">
                 GitHub <span class="arrow">↗</span>
@@ -52,10 +55,6 @@
                 <div class="meta-row">
                     <div class="meta-k">Focus</div>
                     <div class="meta-v">AI-native products</div>
-                </div>
-                <div class="meta-row">
-                    <div class="meta-k">Stack</div>
-                    <div class="meta-v mono" id="heroStack" style="font-size:12px">...</div>
                 </div>
                 <div class="meta-row">
                     <div class="meta-k">Tools</div>
@@ -96,6 +95,23 @@
             </div>
         </section>
 
+        <section id="stack">
+            <div class="section-head">
+                <h2>The <span class="serif">stack</span></h2>
+                <span class="idx">02 / 03 — Tools I reach for</span>
+            </div>
+            <div class="stack">
+                <div class="stack-intro">
+                    <p class="serif">AI-accelerated,<br>not AI-dependent.</p>
+                    <p>I use AI as leverage across every layer — from data models to pipelines to interfaces.
+                        Here's what I reach for in 2025.</p>
+                </div>
+                <div class="stack-groups" id="stack-grid">
+                    <!-- rendered by JS from stack.json -->
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="about">
             <div class="section-head">
                 <h2>About <span class="serif">me</span></h2>
@@ -129,6 +145,19 @@
                         <div class="meta-v">Full-time / Contract</div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h3>Want to build something <span class="serif">real?</span> Let's talk.</h3>
+            <p>I'm open to full-time roles, contracts, or interesting collaborations — AI-native products,
+                full-stack builds, or anything at the intersection of code and intelligence. Reach out with a
+                rough idea and I'll reply within 48 hours.</p>
+            <div class="contact-actions">
+                <a class="btn primary" href="mailto:victorgranda1992@gmail.com">victorgranda1992@gmail.com ↗</a>
+                <a class="btn ghost" href="https://github.com/Vegm92" target="_blank" rel="noopener">GitHub ↗</a>
+                <a class="btn ghost" href="https://www.linkedin.com/in/victor-granda/" target="_blank"
+                    rel="noopener">LinkedIn ↗</a>
             </div>
         </section>
 
@@ -195,6 +224,154 @@
     </template>
 
     <script type="module" src="js/main.js"></script>
+
+    <!-- ————— Agent chatbot ————— -->
+    <div class="agent-root" id="agent">
+        <div class="agent-panel" role="dialog" aria-label="Portfolio assistant">
+            <div class="agent-head">
+                <div class="orb-sm"></div>
+                <div>
+                    <div class="agent-title">Ask about Victor</div>
+                    <div class="agent-sub"><span class="dot"></span> online · usually answers instantly</div>
+                </div>
+                <button class="agent-close" aria-label="Close" id="agent-close">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="agent-body" id="agent-body">
+                <div class="msg bot">
+                    Hey — I'm <b>Vic</b>, Victor's portfolio agent. Ask me about his <b>tech stack</b>,
+                    <b>projects</b>, or whether he's a fit for what you're building.
+                </div>
+            </div>
+
+            <div class="agent-suggest" id="agent-suggest">
+                <button>What's Victor best at?</button>
+                <button>Tell me about his AI work</button>
+                <button>What's his stack?</button>
+                <button>Is he available?</button>
+            </div>
+
+            <div class="agent-input-wrap">
+                <input class="agent-input" id="agent-input" type="text" placeholder="Ask anything about my work…"
+                    autocomplete="off" />
+                <button class="agent-send" id="agent-send" aria-label="Send">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </button>
+            </div>
+            <div class="agent-foot">
+                <span
+                    style="width:6px;height:6px;border-radius:50%;background:var(--emerald-2);box-shadow:0 0 6px var(--emerald-2);display:inline-block;"></span>
+                Keyword-based agent · connect a backend for live AI
+            </div>
+        </div>
+
+        <button class="agent-fab" id="agent-fab" aria-label="Open assistant">
+            <span class="ring"></span>
+            <span class="orb2"></span>
+        </button>
+        <div class="agent-label">Ask Vic, my portfolio agent <span class="mono">⌘K</span></div>
+    </div>
+
+    <script>
+        (function () {
+            const agent = document.getElementById('agent');
+            const fab = document.getElementById('agent-fab');
+            const closeBtn = document.getElementById('agent-close');
+            const body = document.getElementById('agent-body');
+            const input = document.getElementById('agent-input');
+            const send = document.getElementById('agent-send');
+            const suggest = document.getElementById('agent-suggest');
+
+            function open() { agent.classList.add('open'); setTimeout(() => input.focus(), 200); }
+            function close() { agent.classList.remove('open'); }
+
+            fab.addEventListener('click', () => agent.classList.contains('open') ? close() : open());
+            closeBtn.addEventListener('click', close);
+
+            document.addEventListener('keydown', (e) => {
+                if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); open(); }
+                if (e.key === 'Escape' && agent.classList.contains('open')) close();
+            });
+
+            function addMsg(text, who) {
+                const div = document.createElement('div');
+                div.className = 'msg ' + who;
+                div.textContent = text;
+                body.appendChild(div);
+                body.scrollTop = body.scrollHeight;
+            }
+
+            function addTyping() {
+                const t = document.createElement('div');
+                t.className = 'typing';
+                t.innerHTML = '<span></span><span></span><span></span>';
+                body.appendChild(t);
+                body.scrollTop = body.scrollHeight;
+                return t;
+            }
+
+            const responses = [
+                {
+                    pattern: /available|open to work|hire|job|contract|freelance/i,
+                    reply: "Yes! Victor is open to full-time or contract roles right now — AI-native products, full-stack builds, or anything at the intersection of code and intelligence. Best contact: victorgranda1992@gmail.com"
+                },
+                {
+                    pattern: /stack|tech|language|tools/i,
+                    reply: "TypeScript and Python are his main languages. Frontend: React / Next.js. AI integration: Claude SDK, Gemini, OpenAI. Pipelines with n8n. Check the Stack section above for the full breakdown with proficiency bars."
+                },
+                {
+                    pattern: /project|built|shipped|work/i,
+                    reply: "He's shipped 7+ projects — from BYD interactive sales presentations and AI-automated YouTube channels to SaaS tools and dental clinic sites. Use the carousel above to browse them all."
+                },
+                {
+                    pattern: /ai|claude|gemini|openai|agent|automation/i,
+                    reply: "AI isn't a feature for Victor — it's a force multiplier. He builds with Claude SDK, Gemini, and OpenAI to create real pipelines, multi-agent workflows, and content automation at scale."
+                },
+                {
+                    pattern: /contact|email|reach|github|linkedin/i,
+                    reply: "Best way to reach Victor: victorgranda1992@gmail.com. He's also on GitHub (Vegm92) and LinkedIn (victor-granda). Links are in the footer below."
+                },
+                {
+                    pattern: /best at|strength|good at|specializ/i,
+                    reply: "Victor's sweet spot is building AI-native products end-to-end — from data layer and APIs through to the actual interface. He's particularly strong at wiring AI models into real workflows that ship fast and work reliably."
+                }
+            ];
+
+            async function ask(q) {
+                if (!q || !q.trim()) return;
+                addMsg(q, 'user');
+                input.value = '';
+                send.disabled = true;
+                suggest.style.display = 'none';
+                const typing = addTyping();
+
+                await new Promise(r => setTimeout(r, 700 + Math.random() * 500));
+                typing.remove();
+
+                const match = responses.find(r => r.pattern.test(q));
+                const reply = match
+                    ? match.reply
+                    : "Good question! For now I'm a keyword-based agent — try asking about Victor's stack, availability, projects, AI work, or how to reach him.";
+
+                addMsg(reply, 'bot');
+                send.disabled = false;
+                input.focus();
+            }
+
+            send.addEventListener('click', () => ask(input.value));
+            input.addEventListener('keydown', (e) => { if (e.key === 'Enter') ask(input.value); });
+            suggest.querySelectorAll('button').forEach(b => {
+                b.addEventListener('click', () => ask(b.textContent));
+            });
+        })();
+    </script>
 </body>
 
 </html>
