@@ -1,10 +1,13 @@
+@import url("./tokens.css");
 
-* {
-    box-sizing: border-box;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height, 72px);
 }
 
-html,
-body {
+* { box-sizing: border-box; }
+
+html, body {
     margin: 0;
     padding: 0;
     background: var(--bg);
@@ -12,7 +15,7 @@ body {
 }
 
 body {
-    font-family: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body);
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -24,7 +27,7 @@ body {
 
 ::selection {
     background: var(--emerald);
-    color: #041c12;
+    color: var(--bg);
 }
 
 a {
@@ -40,19 +43,15 @@ button {
     cursor: pointer;
 }
 
-.mono {
-    font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-feature-settings: "ss01", "zero";
-}
+.mono { font-family: var(--font-mono); }
 
 .serif {
-    font-family: "Instrument Serif", "Times New Roman", serif;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: -0.01em;
+    font-family: var(--font-accent);
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
 
-/* ─── Background layers ────────────────────────────── */
+/* Background layers */
 .mesh {
     position: fixed;
     inset: 0;
@@ -63,78 +62,62 @@ button {
         radial-gradient(1200px 700px at 80% -10%, rgba(0, 217, 138, 0.1), transparent 60%),
         radial-gradient(900px 600px at -10% 30%, rgba(12, 74, 110, 0.55), transparent 60%),
         radial-gradient(1000px 700px at 50% 120%, rgba(4, 120, 87, 0.22), transparent 60%),
-        linear-gradient(180deg, #05080d 0%, #060b14 40%, #05080d 100%);
-}
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 40%, var(--bg) 100%);
 
-.mesh::before,
-.mesh::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.55;
-    will-change: transform;
-}
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.55;
+        will-change: transform;
+    }
 
-.mesh::before {
-    width: 620px;
-    height: 620px;
-    background: radial-gradient(circle, rgba(0, 217, 138, 0.55), rgba(0, 217, 138, 0) 65%);
-    top: -140px;
-    right: -120px;
-    animation: floatA 18s ease-in-out infinite alternate;
-}
+    &::before {
+        width: 620px;
+        height: 620px;
+        background: radial-gradient(circle, rgba(0, 217, 138, 0.55), rgba(0, 217, 138, 0) 65%);
+        top: -140px;
+        right: -120px;
+        animation: floatA 18s ease-in-out infinite alternate;
+    }
 
-.mesh::after {
-    width: 720px;
-    height: 720px;
-    background: radial-gradient(circle, rgba(22, 78, 142, 0.85), rgba(22, 78, 142, 0) 65%);
-    bottom: -200px;
-    left: -160px;
-    animation: floatB 22s ease-in-out infinite alternate;
-}
+    &::after {
+        width: 720px;
+        height: 720px;
+        background: radial-gradient(circle, rgba(22, 78, 142, 0.85), rgba(22, 78, 142, 0) 65%);
+        bottom: -200px;
+        left: -160px;
+        animation: floatB 22s ease-in-out infinite alternate;
+    }
 
-.mesh .orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.35;
-    width: 520px;
-    height: 520px;
-    background: radial-gradient(circle, rgba(6, 255, 165, 0.35), rgba(6, 255, 165, 0) 65%);
-    top: 40%;
-    left: 55%;
-    animation: floatC 26s ease-in-out infinite alternate;
+    .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        opacity: 0.35;
+        width: 520px;
+        height: 520px;
+        background: radial-gradient(circle, rgba(6, 255, 165, 0.35), rgba(6, 255, 165, 0) 65%);
+        top: 40%;
+        left: 55%;
+        animation: floatC 26s ease-in-out infinite alternate;
+    }
 }
 
 @keyframes floatA {
-    from {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(-80px, 120px, 0) scale(1.15);
-    }
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(-80px, 120px, 0) scale(1.15); }
 }
 
 @keyframes floatB {
-    from {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(120px, -80px, 0) scale(1.1);
-    }
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(120px, -80px, 0) scale(1.1); }
 }
 
 @keyframes floatC {
-    from {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(-160px, -60px, 0) scale(1.2);
-    }
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(-160px, -60px, 0) scale(1.2); }
 }
 
 .grain {
@@ -159,11 +142,10 @@ button {
     mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, #000 50%, transparent 100%);
 }
 
-/* ─── Shell ────────────────────────────────────────── */
 .shell {
     position: relative;
     z-index: 2;
     max-width: 1240px;
     margin: 0 auto;
-    padding: 28px 40px 160px;
+    padding: var(--space-xl) var(--space-2xl) var(--space-5xl);
 }

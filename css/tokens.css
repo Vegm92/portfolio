@@ -1,0 +1,54 @@
+:root {
+    /* Colors */
+    --bg: #05080d;
+    --bg-2: #070b14;
+    --navy: #0a1628;
+    --navy-2: #0d1b33;
+    --ink: #e8eef5;
+    --ink-dim: #8a9bb0;
+    --ink-mute: #4e5d74;
+    --emerald: #00d98a;
+    --emerald-2: #06ffa5;
+    --emerald-deep: #047857;
+    --accent: #7bf0bd;
+    --signal: #ffb547;
+
+    /* Lines & Borders */
+    --line: rgba(255, 255, 255, 0.08);
+    --line-2: rgba(255, 255, 255, 0.14);
+    --line-accent: rgba(6, 255, 165, 0.22);
+    --line-accent-strong: rgba(6, 255, 165, 0.5);
+
+    /* Shadows */
+    --shadow-lg: 0 30px 80px -20px rgba(0, 0, 0, 0.7);
+    --shadow-glow: 0 0 18px rgba(6, 255, 165, 0.55);
+    --shadow-glow-lg: 0 28px 60px -20px rgba(0, 0, 0, 0.6);
+    --shadow-glow-btn: 0 8px 24px -8px rgba(6, 255, 165, 0.35);
+    --shadow-cta: 0 10px 30px -10px rgba(255, 255, 255, 0.3);
+
+    /* Radius */
+    --radius: 14px;
+    --radius-lg: 22px;
+    --radius-full: 999px;
+
+    /* Spacing: Fixed (component internals) */
+    --space-xs: 2px;
+    --space-sm: 4px;
+    --space-md: 8px;
+    --space-lg: 12px;
+    --space-xl: 16px;
+    --space-2xl: 24px;
+
+    /* Nav height */
+    --nav-height: 56px;
+
+    /* Spacing: Fluid (containers) */
+    --space-container: clamp(16px, 4vw, 40px);
+    --space-3xl: clamp(24px, 5vw, 48px);
+    --space-4xl: clamp(32px, 6vw, 72px);
+
+    /* Typography */
+    --font-accent: "Robotika", "Silkscreen", monospace;
+    --font-mono: "JetBrains Mono", monospace;
+    --font-body: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}

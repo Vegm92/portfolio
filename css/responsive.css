@@ -1,66 +1,60 @@
-/* ─── Responsive ───────────────────────────────────── */
-@media (max-width: 960px) {
-    nav.top {
-        position: sticky;
-        top: 12px;
-        padding: 8px 14px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0;
-        z-index: 100;
-    }
+@import url("./styles.css");
 
-    .brand-role,
-    .brand-sep,
-    .nav-cta {
-        display: none;
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    nav.top {
+        padding: var(--space-sm) var(--space-md);
+        top: var(--space-sm);
     }
 
     .brand-name {
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 700;
     }
 
     .nav-links {
-        display: flex;
-        flex-direction: row;
-        gap: 4px;
+        gap: var(--space-xs);
     }
 
     .nav-links a {
         font-size: 12px;
-        padding: 6px 10px;
+        padding: var(--space-xs) var(--space-sm);
     }
 
     .shell {
-        padding: 10px 16px 60px;
+        padding: var(--space-md) var(--space-lg) var(--space-3xl);
     }
 
     .hero {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        min-height: 100vh;
-        gap: 40px;
-        padding: 20px 0;
+        gap: var(--space-xl);
+        padding: var(--space-3xl) 0 var(--space-2xl);
         text-align: center;
+        scroll-margin-top: var(--space-xl);
+
+        &-eyebrow, &-sub {
+            margin-inline: auto;
+        }
+    }
+
+    .hero-meta {
+        width: 100%;
+        margin-top: var(--space-lg);
     }
 
     #carousel-projects, #about {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        min-height: auto;
+        padding: var(--space-2xl) 0 var(--space-xl);
+        overflow: visible;
+        scroll-margin-top: var(--space-xl);
+        position: relative;
+        z-index: 1;
     }
 
-    .hero-eyebrow {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-sub {
-        margin-left: auto;
-        margin-right: auto;
+    #carousel-projects {
+        min-height: min-content;
+        z-index: 2;
     }
 
     .cards {
@@ -68,30 +62,30 @@
     }
 
     h1.lead {
-        font-size: clamp(38px, 9vw, 56px);
+        font-size: clamp(28px, 8vw, 56px);
+
+        .em {
+            font-size: clamp(18px, 4vw, 32px);
+        }
     }
 
     .lead-row {
         white-space: normal;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: var(--space-md);
         justify-content: center;
-    }
 
-    .lead-row::after {
-        display: none;
+        &::after { display: none; }
     }
 
     .section-head {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 8px;
-        padding: 60px 0 16px;
-    }
+        gap: var(--space-sm);
+        padding: var(--space-3xl) 0 var(--space-lg);
 
-    .section-head h2 {
-        font-size: clamp(24px, 7vw, 32px);
+        h2 { font-size: clamp(24px, 6vw, 32px); }
     }
 
     .about-grid {
@@ -101,7 +95,39 @@
 
     .contact-links {
         flex-wrap: wrap;
-        gap: 12px;
+        gap: var(--space-md);
         justify-content: center;
     }
+
+    /* Carousel */
+    .carousel-section {
+        padding: var(--space-md) 0;
+    }
+
+    .carousel-container {
+        height: 540px;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+
+    .carousel-track {
+        max-width: 90vw;
+        height: 100%;
+    }
+
+    .carousel-item {
+        &.prev { transform: translateX(-40%) scale(0.8); }
+        &.next { transform: translateX(40%) scale(0.8); }
+    }
+
+    .card {
+        &-body { padding: var(--space-md); }
+        h3 { font-size: 18px; margin: 0 0 var(--space-sm); }
+        &-desc { font-size: 13px; margin: 0 0 var(--space-md); }
+    }
+
+    .card-shot { aspect-ratio: 16 / 10; }
+
+    .carousel-controls { padding: 0 var(--space-xs); }
+    .carousel-btn { width: 36px; height: 36px; }
 }
