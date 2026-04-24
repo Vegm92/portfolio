@@ -1,380 +1,578 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Victor Granda — Full-stack Developer</title>
+        <meta
+            name="description"
+            content="Victor Granda — full-stack developer who builds AI-native products end-to-end. TypeScript, Rust, Python, Claude SDK."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700&family=Robotika:wght@400;700&display=swap"
+        />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+        />
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Victor Granda — Full-stack Developer</title>
-    <meta name="description"
-        content="Victor Granda — full-stack developer who builds AI-native products end-to-end. TypeScript, Rust, Python, Claude SDK." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700&family=Robotika:wght@400;700&display=swap" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
-</head>
+    <body>
+        <div class="mesh">
+            <div class="orb"></div>
+        </div>
+        <div class="grid-bg"></div>
+        <div class="grain"></div>
 
-<body>
-    <div class="mesh">
-        <div class="orb"></div>
-    </div>
-    <div class="grid-bg"></div>
-    <div class="grain"></div>
-
-    <div class="shell">
-        <nav class="top">
-            <div class="brand">
-                <span class="brand-dot"></span>
-                <span class="brand-name">Victor Granda</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#carousel-projects">Projects</a>
-                <a href="#stack">Stack</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <a class="nav-cta" href="#contact">
-                Contact
-            </a>
-        </nav>
-
-        <section id="home" class="hero">
-            <div>
-                <h1 class="lead">
-                    <span class="lead-row">Full-stack dev</span>
-                    <span class="lead-row"><span class="em">AI-accelerated</span></span>
-                </h1>
-                <p class="hero-sub">
-                    I build products end-to-end, using AI agents, automation, and every tool that compounds the output.
-                    From databases to pipelines to apps — <b>shipped fast, built right.</b>
-                </p>
-            </div>
-            <div class="hero-meta">
-                <div class="meta-row">
-                    <div class="meta-k">Focus</div>
-                    <div class="meta-v">AI-native products</div>
+        <div class="shell">
+            <nav class="top">
+                <div class="brand">
+                    <span class="brand-dot"></span>
+                    <span class="brand-name">Victor Granda</span>
                 </div>
-                <div class="meta-row">
-                    <div class="meta-k">Tools</div>
-                    <div class="meta-v mono" id="heroTools" style="font-size:12px">...</div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#carousel-projects">Projects</a>
+                    <a href="#stack">Stack</a>
+                    <a href="#about">About</a>
                 </div>
-                <div class="meta-row">
-                    <div class="meta-k">Status</div>
-                    <div class="meta-v">
-                        <span class="status-dot"></span>Open to work
-                    </div>
-                </div>
-            </div>
-        </section>
+            </nav>
 
-        <section id="carousel-projects">
-            <div class="section-head" style="padding-bottom: 0;">
-                <h2>Selected <span class="serif">projects</span></h2>
-                <span class="idx" id="carouselIdx">01 / 00</span>
-            </div>
-            <div class="carousel-section">
-                <div class="carousel-container">
-                    <div class="carousel-track" id="carouselTrack"></div>
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn" id="carPrev">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M15 18l-6-6 6-6" />
-                        </svg>
-                    </button>
-                    <button class="carousel-btn" id="carNext">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M9 18l6-6-6-6" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section id="stack">
-            <div class="section-head">
-                <h2>The <span class="serif">stack</span></h2>
-                <span class="idx">02 / 03 — Tools I reach for</span>
-            </div>
-            <div class="stack">
-                <div class="stack-intro">
-                    <p class="serif">AI-accelerated,<br>not AI-dependent.</p>
-                    <p>I use AI as leverage across every layer — from data models to pipelines to interfaces.
-                        Here's what I reach for in 2025.</p>
-                </div>
-                <div class="stack-groups" id="stack-grid">
-                    <!-- rendered by JS from stack.json -->
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="section-head">
-                <h2>About <span class="serif">me</span></h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>Building at the intersection of<br /><span class="serif">code & intelligence.</span></h3>
-                    <p>I'm Victor — a full-stack developer who uses AI as leverage. I design systems end-to-end: from
-                        the data layer and APIs to the interfaces people actually use. My focus is on AI-native
-                        products that are fast, reliable, and genuinely useful.</p>
-                    <p>I work across the stack with <b>TypeScript</b>, <b>Python</b>, and <b>React</b>, and I integrate
-                        AI deeply — not as a feature, but as a force multiplier on every stage of the build. I build
-                        automated pipelines with <b>n8n</b>, leverage <b>multi-agent swarms</b> for content generation,
-                        and ship products with AI powered by <b>Claude SDK</b>, <b>OpenAI</b>, and <b>Gemini</b>.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="meta-row" style="border-top:0">
-                        <div class="meta-k">Shipped</div>
-                        <div class="meta-v" id="aboutShipped">...</div>
-                    </div>
-                    <div class="meta-row">
-                        <div class="meta-k">Languages</div>
-                        <div class="meta-v mono" id="aboutLanguages" style="font-size:12px">...</div>
-                    </div>
-                    <div class="meta-row">
-                        <div class="meta-k">AI tools</div>
-                        <div class="meta-v mono" id="aboutAiTools" style="font-size:12px">...</div>
-                    </div>
-                    <div class="meta-row">
-                        <div class="meta-k">Open to</div>
-                        <div class="meta-v">Full-time / Contract</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h3>Want to build something <span class="serif">real?</span> Let's talk.</h3>
-            <p>I'm open to full-time roles, contracts, or interesting collaborations — AI-native products,
-                full-stack builds, or anything at the intersection of code and intelligence. Reach out with a
-                rough idea and I'll reply within 48 hours.</p>
-            <div class="contact-actions">
-                <a class="btn primary" href="https://mail.google.com/mail/?view=cm&to=victorgranda1992@gmail.com" target="_blank" rel="noopener">victorgranda1992@gmail.com ↗</a>
-                <a class="btn ghost" href="https://github.com/Vegm92" target="_blank" rel="noopener">GitHub ↗</a>
-                <a class="btn ghost" href="https://www.linkedin.com/in/victor-granda/" target="_blank"
-                    rel="noopener">LinkedIn ↗</a>
-            </div>
-        </section>
-
-        <footer>
-            <div>Victor Granda · <span id="footerYear"></span></div>
-            <div class="contact-links">
-                <a href="https://github.com/Vegm92" target="_blank" rel="noopener">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.814 1.103.814 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.628-5.373-12-12-12z" />
-                    </svg>
-                    GitHub
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&to=victorgranda1992@gmail.com" target="_blank" rel="noopener">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
-                    Email
-                </a>
-                <a href="https://www.linkedin.com/in/victor-granda/" target="_blank" rel="noopener">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
-                        <circle cx="4" cy="4" r="2" />
-                    </svg>
-                    LinkedIn
-                </a>
-            </div>
-        </footer>
-    </div>
-
-    <template id="project-card-template">
-        <article class="card carousel-item">
-            <div class="card-shot">
-                <div class="card-shot-placeholder">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.2">
-                        <rect x="2" y="3" width="20" height="14" rx="2" />
-                        <path d="M8 21h8M12 17v4" />
-                    </svg>
-                    <span class="shot-filename"></span>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-top">
-                    <span class="card-tag"></span>
-                    <span class="card-year mono"></span>
-                </div>
-                <h3><span class="project-name"></span> <span class="serif">—</span></h3>
-                <p class="card-desc"></p>
-                <div class="card-stack"></div>
-                <a class="card-cta" href="#" target="_blank" rel="noopener">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.814 1.103.814 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.628-5.373-12-12-12z" />
-                    </svg>
-                    View on GitHub
-                    <span class="ext-arrow">↗</span>
-                </a>
-            </div>
-        </article>
-    </template>
-
-    <script type="module" src="js/main.js"></script>
-
-    <!-- ————— Agent chatbot ————— -->
-    <div class="agent-root" id="agent">
-        <div class="agent-panel" role="dialog" aria-label="Portfolio assistant">
-            <div class="agent-head">
-                <div class="orb-sm"></div>
+            <section id="home" class="hero">
                 <div>
-                    <div class="agent-title">Ask about Victor</div>
-                    <div class="agent-sub"><span class="dot"></span> online · usually answers instantly</div>
+                    <h1 class="lead">
+                        <span class="lead-row">Full-stack dev</span>
+                        <span class="lead-row"
+                            ><span class="em">AI-accelerated</span></span
+                        >
+                    </h1>
+                    <p class="hero-sub">
+                        I build products end-to-end, using AI agents,
+                        automation, and every tool that compounds the output.
+                        From databases to pipelines to apps —
+                        <b>shipped fast, built right.</b>
+                    </p>
                 </div>
-                <button class="agent-close" aria-label="Close" id="agent-close">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6 6l12 12M18 6L6 18" />
-                    </svg>
-                </button>
-            </div>
+                <div class="hero-meta">
+                    <div class="meta-row">
+                        <div class="meta-k">Focus</div>
+                        <div class="meta-v">AI-native products</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-k">Tools</div>
+                        <div
+                            class="meta-v mono"
+                            id="heroTools"
+                            style="font-size: 12px"
+                        >
+                            ...
+                        </div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-k">Status</div>
+                        <div class="meta-v">
+                            <span class="status-dot"></span>Open to work
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <div class="agent-body" id="agent-body">
-                <div class="msg bot">
-                    Hey — I'm <b>Vic</b>, Victor's portfolio agent. Ask me about his <b>tech stack</b>,
-                    <b>projects</b>, or whether he's a fit for what you're building.
+            <section id="carousel-projects">
+                <div class="section-head" style="padding-bottom: 0">
+                    <h2>Selected <span class="serif">projects</span></h2>
+                    <span class="idx" id="carouselIdx">01 / 00</span>
+                </div>
+                <div class="carousel-section">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carouselTrack"></div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="carPrev">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <button class="carousel-btn" id="carNext">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stack">
+                <div class="section-head">
+                    <h2>The <span class="serif">stack</span></h2>
+                    <span class="idx">02 / 03 — Tools I reach for</span>
+                </div>
+                <div class="stack">
+                    <div class="stack-intro">
+                        <p class="serif">
+                            AI-accelerated,<br />not AI-dependent.
+                        </p>
+                        <p>
+                            I use AI as leverage across every layer — from data
+                            models to pipelines to interfaces. Here's what I
+                            reach for in 2025.
+                        </p>
+                    </div>
+                    <div class="stack-groups" id="stack-grid">
+                        <!-- rendered by JS from stack.json -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <div class="section-head">
+                    <h2>About <span class="serif">me</span></h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>
+                            Building at the intersection of<br /><span
+                                class="serif"
+                                >code & intelligence.</span
+                            >
+                        </h3>
+                        <p>
+                            I'm Victor — a full-stack developer who uses AI as
+                            leverage. I design systems end-to-end: from the data
+                            layer and APIs to the interfaces people actually
+                            use. My focus is on AI-native products that are
+                            fast, reliable, and genuinely useful.
+                        </p>
+                        <p>
+                            I work across the stack with <b>TypeScript</b>,
+                            <b>Python</b>, and <b>React</b>, and I integrate AI
+                            deeply — not as a feature, but as a force multiplier
+                            on every stage of the build. I build automated
+                            pipelines with <b>n8n</b>, leverage
+                            <b>multi-agent swarms</b> for content generation,
+                            and ship products with AI powered by
+                            <b>Claude SDK</b>, <b>OpenAI</b>, and <b>Gemini</b>.
+                        </p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="meta-row" style="border-top: 0">
+                            <div class="meta-k">Shipped</div>
+                            <div class="meta-v" id="aboutShipped">...</div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-k">Languages</div>
+                            <div
+                                class="meta-v mono"
+                                id="aboutLanguages"
+                                style="font-size: 12px"
+                            >
+                                ...
+                            </div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-k">AI tools</div>
+                            <div
+                                class="meta-v mono"
+                                id="aboutAiTools"
+                                style="font-size: 12px"
+                            >
+                                ...
+                            </div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-k">Open to</div>
+                            <div class="meta-v">Full-time / Contract</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <h3>
+                    Want to build something
+                    <span class="serif">real?</span> Let's talk.
+                </h3>
+                <p>
+                    I'm open to full-time roles, contracts, or interesting
+                    collaborations — AI-native products, full-stack builds, or
+                    anything at the intersection of code and intelligence. Reach
+                    out with a rough idea and I'll reply within 48 hours.
+                </p>
+                <div class="contact-actions">
+                    <a
+                        class="btn primary"
+                        href="https://mail.google.com/mail/?view=cm&to=victorgranda1992@gmail.com"
+                        target="_blank"
+                        rel="noopener"
+                        >victorgranda1992@gmail.com ↗</a
+                    >
+                    <a
+                        class="btn ghost"
+                        href="https://github.com/Vegm92"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub ↗</a
+                    >
+                    <a
+                        class="btn ghost"
+                        href="https://www.linkedin.com/in/victor-granda/"
+                        target="_blank"
+                        rel="noopener"
+                        >LinkedIn ↗</a
+                    >
+                </div>
+            </section>
+
+            <footer>
+                <div>Victor Granda · <span id="footerYear"></span></div>
+                <div class="contact-links">
+                    <a
+                        href="https://github.com/Vegm92"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.814 1.103.814 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.628-5.373-12-12-12z"
+                            />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&to=victorgranda1992@gmail.com"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path
+                                d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+                            />
+                        </svg>
+                        Email
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/victor-granda/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                            />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </footer>
+        </div>
+
+        <template id="project-card-template">
+            <article class="card carousel-item">
+                <div class="card-shot">
+                    <div class="card-shot-placeholder">
+                        <svg
+                            width="40"
+                            height="40"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                        >
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                        <span class="shot-filename"></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-top">
+                        <span class="card-tag"></span>
+                        <span class="card-year mono"></span>
+                    </div>
+                    <h3>
+                        <span class="project-name"></span>
+                        <span class="serif">—</span>
+                    </h3>
+                    <p class="card-desc"></p>
+                    <div class="card-stack"></div>
+                    <a class="card-cta" href="#" target="_blank" rel="noopener">
+                        <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.814 1.103.814 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.628-5.373-12-12-12z"
+                            />
+                        </svg>
+                        View on GitHub
+                        <span class="ext-arrow">↗</span>
+                    </a>
+                </div>
+            </article>
+        </template>
+
+        <script type="module" src="js/main.js"></script>
+
+        <!-- ————— Agent chatbot ————— -->
+        <div class="agent-root" id="agent">
+            <div
+                class="agent-panel"
+                role="dialog"
+                aria-label="Portfolio assistant"
+            >
+                <div class="agent-head">
+                    <div class="orb-sm"></div>
+                    <div>
+                        <div class="agent-title">Ask about Victor</div>
+                        <div class="agent-sub">
+                            <span class="dot"></span> online · usually answers
+                            instantly
+                        </div>
+                    </div>
+                    <button
+                        class="agent-close"
+                        aria-label="Close"
+                        id="agent-close"
+                    >
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M6 6l12 12M18 6L6 18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="agent-body" id="agent-body">
+                    <div class="msg bot">
+                        Hey — I'm <b>Vic</b>, Victor's portfolio agent. Ask me
+                        about his <b>tech stack</b>, <b>projects</b>, or whether
+                        he's a fit for what you're building.
+                    </div>
+                </div>
+
+                <div class="agent-suggest" id="agent-suggest">
+                    <button>What's Victor best at?</button>
+                    <button>Tell me about his AI work</button>
+                    <button>What's his stack?</button>
+                    <button>Is he available?</button>
+                </div>
+
+                <div class="agent-input-wrap">
+                    <input
+                        class="agent-input"
+                        id="agent-input"
+                        type="text"
+                        placeholder="Ask anything about my work…"
+                        autocomplete="off"
+                    />
+                    <button
+                        class="agent-send"
+                        id="agent-send"
+                        aria-label="Send"
+                    >
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="agent-foot">
+                    <span
+                        style="
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 50%;
+                            background: var(--emerald-2);
+                            box-shadow: 0 0 6px var(--emerald-2);
+                            display: inline-block;
+                        "
+                    ></span>
+                    Keyword-based agent · connect a backend for live AI
                 </div>
             </div>
 
-            <div class="agent-suggest" id="agent-suggest">
-                <button>What's Victor best at?</button>
-                <button>Tell me about his AI work</button>
-                <button>What's his stack?</button>
-                <button>Is he available?</button>
-            </div>
-
-            <div class="agent-input-wrap">
-                <input class="agent-input" id="agent-input" type="text" placeholder="Ask anything about my work…"
-                    autocomplete="off" />
-                <button class="agent-send" id="agent-send" aria-label="Send">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </button>
-            </div>
-            <div class="agent-foot">
-                <span
-                    style="width:6px;height:6px;border-radius:50%;background:var(--emerald-2);box-shadow:0 0 6px var(--emerald-2);display:inline-block;"></span>
-                Keyword-based agent · connect a backend for live AI
+            <button
+                class="agent-fab"
+                id="agent-fab"
+                aria-label="Open assistant"
+            >
+                <span class="ring"></span>
+                <span class="orb2"></span>
+            </button>
+            <div class="agent-label">
+                Ask Vic, my portfolio agent <span class="mono">⌘K</span>
             </div>
         </div>
 
-        <button class="agent-fab" id="agent-fab" aria-label="Open assistant">
-            <span class="ring"></span>
-            <span class="orb2"></span>
-        </button>
-        <div class="agent-label">Ask Vic, my portfolio agent <span class="mono">⌘K</span></div>
-    </div>
+        <script>
+            (function () {
+                const agent = document.getElementById("agent");
+                const fab = document.getElementById("agent-fab");
+                const closeBtn = document.getElementById("agent-close");
+                const body = document.getElementById("agent-body");
+                const input = document.getElementById("agent-input");
+                const send = document.getElementById("agent-send");
+                const suggest = document.getElementById("agent-suggest");
 
-    <script>
-        (function () {
-            const agent = document.getElementById('agent');
-            const fab = document.getElementById('agent-fab');
-            const closeBtn = document.getElementById('agent-close');
-            const body = document.getElementById('agent-body');
-            const input = document.getElementById('agent-input');
-            const send = document.getElementById('agent-send');
-            const suggest = document.getElementById('agent-suggest');
-
-            function open() { agent.classList.add('open'); setTimeout(() => input.focus(), 200); }
-            function close() { agent.classList.remove('open'); }
-
-            fab.addEventListener('click', () => agent.classList.contains('open') ? close() : open());
-            closeBtn.addEventListener('click', close);
-
-            document.addEventListener('keydown', (e) => {
-                if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); open(); }
-                if (e.key === 'Escape' && agent.classList.contains('open')) close();
-            });
-
-            function addMsg(text, who) {
-                const div = document.createElement('div');
-                div.className = 'msg ' + who;
-                div.textContent = text;
-                body.appendChild(div);
-                body.scrollTop = body.scrollHeight;
-            }
-
-            function addTyping() {
-                const t = document.createElement('div');
-                t.className = 'typing';
-                t.innerHTML = '<span></span><span></span><span></span>';
-                body.appendChild(t);
-                body.scrollTop = body.scrollHeight;
-                return t;
-            }
-
-            const responses = [
-                {
-                    pattern: /available|open to work|hire|job|contract|freelance/i,
-                    reply: "Yes! Victor is open to full-time or contract roles right now — AI-native products, full-stack builds, or anything at the intersection of code and intelligence. Best contact: victorgranda1992@gmail.com"
-                },
-                {
-                    pattern: /stack|tech|language|tools/i,
-                    reply: "TypeScript and Python are his main languages. Frontend: React / Next.js. AI integration: Claude SDK, Gemini, OpenAI. Pipelines with n8n. Check the Stack section above for the full breakdown with proficiency bars."
-                },
-                {
-                    pattern: /project|built|shipped|work/i,
-                    reply: "He's shipped 7+ projects — from BYD interactive sales presentations and AI-automated YouTube channels to SaaS tools and dental clinic sites. Use the carousel above to browse them all."
-                },
-                {
-                    pattern: /ai|claude|gemini|openai|agent|automation/i,
-                    reply: "AI isn't a feature for Victor — it's a force multiplier. He builds with Claude SDK, Gemini, and OpenAI to create real pipelines, multi-agent workflows, and content automation at scale."
-                },
-                {
-                    pattern: /contact|email|reach|github|linkedin/i,
-                    reply: "Best way to reach Victor: victorgranda1992@gmail.com. He's also on GitHub (Vegm92) and LinkedIn (victor-granda). Links are in the footer below."
-                },
-                {
-                    pattern: /best at|strength|good at|specializ/i,
-                    reply: "Victor's sweet spot is building AI-native products end-to-end — from data layer and APIs through to the actual interface. He's particularly strong at wiring AI models into real workflows that ship fast and work reliably."
+                function open() {
+                    agent.classList.add("open");
+                    setTimeout(() => input.focus(), 200);
                 }
-            ];
+                function close() {
+                    agent.classList.remove("open");
+                }
 
-            async function ask(q) {
-                if (!q || !q.trim()) return;
-                addMsg(q, 'user');
-                input.value = '';
-                send.disabled = true;
-                suggest.style.display = 'none';
-                const typing = addTyping();
+                fab.addEventListener("click", () =>
+                    agent.classList.contains("open") ? close() : open(),
+                );
+                closeBtn.addEventListener("click", close);
 
-                await new Promise(r => setTimeout(r, 700 + Math.random() * 500));
-                typing.remove();
+                document.addEventListener("keydown", (e) => {
+                    if (
+                        (e.metaKey || e.ctrlKey) &&
+                        e.key.toLowerCase() === "k"
+                    ) {
+                        e.preventDefault();
+                        open();
+                    }
+                    if (e.key === "Escape" && agent.classList.contains("open"))
+                        close();
+                });
 
-                const match = responses.find(r => r.pattern.test(q));
-                const reply = match
-                    ? match.reply
-                    : "Good question! For now I'm a keyword-based agent — try asking about Victor's stack, availability, projects, AI work, or how to reach him.";
+                function addMsg(text, who) {
+                    const div = document.createElement("div");
+                    div.className = "msg " + who;
+                    div.textContent = text;
+                    body.appendChild(div);
+                    body.scrollTop = body.scrollHeight;
+                }
 
-                addMsg(reply, 'bot');
-                send.disabled = false;
-                input.focus();
-            }
+                function addTyping() {
+                    const t = document.createElement("div");
+                    t.className = "typing";
+                    t.innerHTML = "<span></span><span></span><span></span>";
+                    body.appendChild(t);
+                    body.scrollTop = body.scrollHeight;
+                    return t;
+                }
 
-            send.addEventListener('click', () => ask(input.value));
-            input.addEventListener('keydown', (e) => { if (e.key === 'Enter') ask(input.value); });
-            suggest.querySelectorAll('button').forEach(b => {
-                b.addEventListener('click', () => ask(b.textContent));
-            });
-        })();
-    </script>
+                const responses = [
+                    {
+                        pattern:
+                            /available|open to work|hire|job|contract|freelance/i,
+                        reply: "Yes! Victor is open to full-time or contract roles right now — AI-native products, full-stack builds, or anything at the intersection of code and intelligence. Best contact: victorgranda1992@gmail.com",
+                    },
+                    {
+                        pattern: /stack|tech|language|tools/i,
+                        reply: "TypeScript and Python are his main languages. Frontend: React / Next.js. AI integration: Claude SDK, Gemini, OpenAI. Pipelines with n8n. Check the Stack section above for the full breakdown with proficiency bars.",
+                    },
+                    {
+                        pattern: /project|built|shipped|work/i,
+                        reply: "He's shipped 7+ projects — from BYD interactive sales presentations and AI-automated YouTube channels to SaaS tools and dental clinic sites. Use the carousel above to browse them all.",
+                    },
+                    {
+                        pattern: /ai|claude|gemini|openai|agent|automation/i,
+                        reply: "AI isn't a feature for Victor — it's a force multiplier. He builds with Claude SDK, Gemini, and OpenAI to create real pipelines, multi-agent workflows, and content automation at scale.",
+                    },
+                    {
+                        pattern: /contact|email|reach|github|linkedin/i,
+                        reply: "Best way to reach Victor: victorgranda1992@gmail.com. He's also on GitHub (Vegm92) and LinkedIn (victor-granda). Links are in the footer below.",
+                    },
+                    {
+                        pattern: /best at|strength|good at|specializ/i,
+                        reply: "Victor's sweet spot is building AI-native products end-to-end — from data layer and APIs through to the actual interface. He's particularly strong at wiring AI models into real workflows that ship fast and work reliably.",
+                    },
+                ];
 
-<!-- Counter.dev -->
-<script src="https://cdn.counter.dev/script.js" data-id="d3ac7241-ec59-4fd5-a2d3-33291293fceb" data-utcoffset="2"></script>
-</body>
+                async function ask(q) {
+                    if (!q || !q.trim()) return;
+                    addMsg(q, "user");
+                    input.value = "";
+                    send.disabled = true;
+                    suggest.style.display = "none";
+                    const typing = addTyping();
 
+                    await new Promise((r) =>
+                        setTimeout(r, 700 + Math.random() * 500),
+                    );
+                    typing.remove();
+
+                    const match = responses.find((r) => r.pattern.test(q));
+                    const reply = match
+                        ? match.reply
+                        : "Good question! For now I'm a keyword-based agent — try asking about Victor's stack, availability, projects, AI work, or how to reach him.";
+
+                    addMsg(reply, "bot");
+                    send.disabled = false;
+                    input.focus();
+                }
+
+                send.addEventListener("click", () => ask(input.value));
+                input.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") ask(input.value);
+                });
+                suggest.querySelectorAll("button").forEach((b) => {
+                    b.addEventListener("click", () => ask(b.textContent));
+                });
+            })();
+        </script>
+
+        <!-- Counter.dev -->
+        <script
+            src="https://cdn.counter.dev/script.js"
+            data-id="d3ac7241-ec59-4fd5-a2d3-33291293fceb"
+            data-utcoffset="2"
+        ></script>
+    </body>
 </html>
