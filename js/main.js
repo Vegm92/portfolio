@@ -10,7 +10,7 @@ async function renderProjects() {
     '<div style="color: var(--ink-dim);">Loading projects...</div>';
 
   try {
-    const response = await fetch("to_publish/projects.json");
+    const response = await fetch("/public/projects.json");
     const data = await response.json();
 
     const numProjects = data.projects.length;
@@ -93,7 +93,7 @@ async function renderProjects() {
       const shotDiv = clone.querySelector(".card-shot");
       if (project.screenshot) {
         const img = document.createElement("img");
-        img.src = `to_publish/${project.screenshot}`;
+        img.src = `/public/${project.screenshot}`;
         img.onload = () => img.classList.add("loaded");
         shotDiv.innerHTML = "";
         shotDiv.appendChild(img);
@@ -150,7 +150,7 @@ async function loadStack() {
   if (!grid) return;
 
   try {
-    const res = await fetch("to_publish/stack.json");
+    const res = await fetch("/public/stack.json");
     const { stack } = await res.json();
 
     const groups = {};

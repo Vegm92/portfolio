@@ -14,3 +14,8 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Project documentation (for eyes only - don't track)
+CLAUDE.md
+REFERENCES.md
+CONTEXT.md
