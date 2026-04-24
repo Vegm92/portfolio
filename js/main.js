@@ -30,30 +30,6 @@ async function renderProjects() {
       (a, b) => techCounts[b] - techCounts[a],
     );
 
-    const stackSet = new Set([
-      "typescript",
-      "python",
-      "rust",
-      "javascript",
-      "ts",
-      "js",
-      "react",
-      "next.js",
-      "sveltekit",
-      "drizzle orm",
-      "sqlite",
-      "tailwind css",
-    ]);
-    const aiSet = new Set([
-      "gemini ai",
-      "claude sdk",
-      "claude api",
-      "muapi.ai",
-      "mcp",
-      "elevenlabs",
-      "claude",
-    ]);
-
     let stack = [],
       aiTools = [],
       tools = [];
