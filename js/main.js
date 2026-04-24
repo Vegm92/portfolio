@@ -2,29 +2,18 @@ import { Carousel } from "./carousel.js";
 
 const $ = (s) => document.querySelector(s);
 
-const stackSet = new Set([
-  "typescript",
-  "python",
-  "rust",
-  "javascript",
-  "ts",
-  "js",
-  "react",
-  "next.js",
-  "sveltekit",
-  "drizzle orm",
-  "sqlite",
-  "tailwind css",
-]);
-const aiSet = new Set([
-  "gemini ai",
-  "claude sdk",
-  "claude api",
-  "muapi.ai",
-  "mcp",
-  "elevenlabs",
-  "claude",
-]);
+let stackSet, aiSet;
+
+async function loadConfig() {
+  try {
+    const res = await fetch("public/config.json");
+    const { stackSet: stack, aiSet: ai } = await res.json();
+    stackSet = new Set(stack.map(t => t.toLowerCase()));
+    aiSet = new Set(ai.map(t => t.toLowerCase()));
+  } catch (e) {
+    console.error("Failed to load config:", e);
+  }
+}
 
 async function renderProjects() {
   const track = $("#carouselTrack");
@@ -182,7 +171,8 @@ async function loadStack() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+  await loadConfig();
   renderProjects();
   loadStack();
   const footerYear = $("#footerYear");
