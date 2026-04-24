@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "npx live-server --port=3000 --open=index.html"
+  },
+  "dependencies": {
+    "playwright": "^1.59.1"
   }
 }
