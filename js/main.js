@@ -2,14 +2,14 @@ import { Carousel } from "./carousel.js";
 
 const $ = (s) => document.querySelector(s);
 
-let stackSet, aiSet;
+let stackSet, aiSet, configData;
 
 async function loadConfig() {
   try {
     const res = await fetch("public/config.json");
-    const { stackSet: stack, aiSet: ai } = await res.json();
-    stackSet = new Set(stack.map(t => t.toLowerCase()));
-    aiSet = new Set(ai.map(t => t.toLowerCase()));
+    configData = await res.json();
+    stackSet = new Set(configData.stackSet.map(t => t.toLowerCase()));
+    aiSet = new Set(configData.aiSet.map(t => t.toLowerCase()));
   } catch (e) {
     console.error("Failed to load config:", e);
   }
@@ -18,13 +18,15 @@ async function loadConfig() {
 async function renderProjects() {
   const track = $("#carouselTrack");
   if (!track) return;
+  if (!configData) {
+    await loadConfig();
+  }
 
   track.innerHTML =
     '<div style="color: var(--ink-dim);">Loading projects...</div>';
 
   try {
-    const response = await fetch("public/projects.json");
-    const data = await response.json();
+    const data = configData;
 
     const numProjects = data.projects.length;
     if ($("#aboutShipped"))
@@ -137,10 +139,12 @@ async function renderProjects() {
 async function loadStack() {
   const grid = document.getElementById("stack-grid");
   if (!grid) return;
+  if (!configData) {
+    await loadConfig();
+  }
 
   try {
-    const res = await fetch("public/stack.json");
-    const { stack } = await res.json();
+    const stack = configData.stack;
 
     const groups = {};
     stack.forEach((t) => {

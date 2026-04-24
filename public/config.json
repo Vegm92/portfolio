@@ -21,5 +21,84 @@
     "mcp",
     "elevenlabs",
     "claude"
+  ],
+  "stack": [
+    { "name": "TypeScript", "icon": "ri-command-line", "level": "Expert", "category": "Languages", "proficiency": 95 },
+    { "name": "Python", "icon": "ri-python-line", "level": "Advanced", "category": "Languages", "proficiency": 88 },
+    { "name": "JavaScript", "icon": "ri-javascript-line", "level": "Expert", "category": "Languages", "proficiency": 92 },
+    { "name": "Node.js", "icon": "ri-nodejs-line", "level": "Expert", "category": "Languages", "proficiency": 88 },
+    { "name": "React", "icon": "ri-reactjs-line", "level": "Expert", "category": "Frameworks", "proficiency": 92 },
+    { "name": "Next.js", "icon": "ri-nextjs-line", "level": "Advanced", "category": "Frameworks", "proficiency": 85 },
+    { "name": "Express.js", "icon": "ri-server-line", "level": "Advanced", "category": "Frameworks", "proficiency": 82 },
+    { "name": "Tailwind CSS", "icon": "ri-css3-line", "level": "Expert", "category": "Frameworks", "proficiency": 90 },
+    { "name": "Claude / Gemini", "icon": "ri-robot-3-line", "level": "Expert", "category": "AI & Infra", "proficiency": 95 },
+    { "name": "n8n / Automation", "icon": "ri-flow-chart", "level": "Advanced", "category": "AI & Infra", "proficiency": 87 },
+    { "name": "MongoDB", "icon": "ri-database-2-line", "level": "Advanced", "category": "AI & Infra", "proficiency": 80 },
+    { "name": "Docker / Vercel", "icon": "ri-instance-line", "level": "Intermediate", "category": "AI & Infra", "proficiency": 75 }
+  ],
+  "projects": [
+    {
+      "name": "BYD Interactive Presentation",
+      "version": "1.0.0",
+      "description": "Interactive presentation application for BYD ATTO 2 DM-i European Sales Training. Optimized for full-screen kiosks with tactile navigation.",
+      "type": "presentation",
+      "tech": ["React", "Vite", "Tailwind CSS", "Swiper"],
+      "github": "https://github.com/Vegm92/byd.git",
+      "screenshot": "screenshots/byd-presentation.png"
+    },
+    {
+      "name": "Farmacia Granda",
+      "version": "0.1.0",
+      "description": "Modern e-commerce and health platform for a neighborhood pharmacy, bridging the gap between traditional healthcare and digital convenience.",
+      "type": "webapp",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
+      "github": "https://github.com/Vegm92/farmacia-granda-web-rework.git",
+      "screenshot": "screenshots/farmacia-granda.png"
+    },
+    {
+      "name": "Mise en Place",
+      "version": "0.0.1",
+      "description": "Smart kitchen and recipe manager powered by Gemini AI. Extracts structured data from text or images to optimize culinary workflows.",
+      "type": "webapp",
+      "tech": ["SvelteKit", "Vite", "Drizzle ORM", "SQLite", "Gemini AI"],
+      "github": "https://github.com/Vegm92/mise-en-place-sk.git",
+      "screenshot": "screenshots/mise-en-place.png"
+    },
+    {
+      "name": "Reelforge",
+      "version": "1.0.0",
+      "description": "AI-powered programmatic video pipeline using Remotion. Automatically creates high-impact vertical infographics from trending data.",
+      "type": "webapp",
+      "tech": ["TypeScript", "React", "Remotion", "Claude SDK"],
+      "github": "https://github.com/Vegm92/infographic-video-generator.git",
+      "screenshot": "screenshots/reelforge.png"
+    },
+    {
+      "name": "Automated Content Channel",
+      "version": "1.0.0",
+      "description": "Headless video production pipeline using multi-agent swarms. Orchestrates research, scriptwriting, and editing into an end-to-end automated flow.",
+      "type": "automation",
+      "tech": ["Python", "Claude API", "Muapi.ai"],
+      "github": "https://github.com/Vegm92/automated-content-channel.git",
+      "screenshot": "screenshots/automated-content-channel.png"
+    },
+    {
+      "name": "AutoAffiliate",
+      "version": "1.0.0",
+      "description": "AI-powered affiliate marketing platform that generates comprehensive product reviews using Anthropic Claude. Features SEO optimization, affiliate link management, and automated content creation.",
+      "type": "webapp",
+      "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Anthropic AI"],
+      "github": "https://github.com/Vegm92/AutoAffiliate.git",
+      "screenshot": "screenshots/automated-affiliate.png"
+    },
+    {
+      "name": "Glow Dental",
+      "version": "1.0.0",
+      "description": "Modern dental clinic website with appointment booking, service showcase, and patient Portal integration.",
+      "type": "webapp",
+      "tech": ["TypeScript", "Next.js", "Tailwind CSS"],
+      "github": "https://github.com/Vegm92/glow-dental.git",
+      "screenshot": "screenshots/glow-dental.png"
+    }
   ]
 }
