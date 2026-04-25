@@ -7,10 +7,13 @@ let aiSet, configData;
 async function loadConfig() {
   try {
     const res = await fetch("public/config.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     configData = await res.json();
-    aiSet = new Set(configData.aiSet.map(t => t.toLowerCase()));
+    if (!Array.isArray(configData.projects)) throw new Error("Invalid config: missing projects array");
+    aiSet = new Set((configData.aiSet || []).map(t => t.toLowerCase()));
   } catch (e) {
     console.error("Failed to load config:", e);
+    configData = null;
   }
 }
 
@@ -82,10 +85,14 @@ async function renderProjects() {
       const shotDiv = clone.querySelector(".card-shot");
       if (project.screenshot) {
         const img = document.createElement("img");
+        img.alt = project.name;
+        img.loading = index === 0 ? "eager" : "lazy";
+        img.onload = () => {
+          shotDiv.innerHTML = "";
+          shotDiv.appendChild(img);
+          img.classList.add("loaded");
+        };
         img.src = `public/${project.screenshot}`;
-        img.onload = () => img.classList.add("loaded");
-        shotDiv.innerHTML = "";
-        shotDiv.appendChild(img);
       } else {
         clone.querySelector(".shot-filename").textContent =
           `${project.name.toLowerCase()}.png`;
@@ -175,6 +182,11 @@ async function loadStack() {
 
 document.addEventListener("DOMContentLoaded", async function () {
   await loadConfig();
+  if (!configData) {
+    const track = $("#carouselTrack");
+    if (track) track.innerHTML = '<div style="color: #ffb547;">Failed to load projects. Please refresh.</div>';
+    return;
+  }
   renderProjects();
   loadStack();
   const footerYear = $("#footerYear");

@@ -39,14 +39,21 @@ function addTyping() {
 }
 
 async function callWorker(userMessage) {
-  const res = await fetch(WORKER_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: userMessage }),
-  });
-  if (!res.ok) throw new Error(`Worker error: ${res.status}`);
-  const data = await res.json();
-  return data.reply?.trim() ?? "Sorry, I couldn't generate a response right now.";
+  const ctrl = new AbortController();
+  const timeout = setTimeout(() => ctrl.abort(), 10_000);
+  try {
+    const res = await fetch(WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: userMessage }),
+      signal: ctrl.signal,
+    });
+    if (!res.ok) throw new Error(`Worker error: ${res.status}`);
+    const data = await res.json();
+    return data.reply?.trim() ?? "Sorry, I couldn't generate a response right now.";
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 function lockInput() {
@@ -103,7 +110,7 @@ document.addEventListener("keydown", (e) => {
 
 send.addEventListener("click", () => ask(input.value));
 input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") ask(input.value);
+  if (e.key === "Enter" && !send.disabled) ask(input.value);
 });
 suggest.querySelectorAll("button").forEach((b) => {
   b.addEventListener("click", () => ask(b.textContent));

@@ -1,13 +1,17 @@
 export class Carousel {
+    static TRANSITION_DURATION = 500;
+    static SWIPE_THRESHOLD = 80;
+
     constructor(trackSelector, prevBtnSelector, nextBtnSelector, countSelector) {
         this.track = document.querySelector(trackSelector);
         this.prevBtn = document.querySelector(prevBtnSelector);
         this.nextBtn = document.querySelector(nextBtnSelector);
         this.countSpan = document.querySelector(countSelector);
-        
+
         this.items = [];
         this.currentIdx = 0;
-        
+        this.transitioning = false;
+
         this.initEvents();
     }
 
@@ -25,29 +29,40 @@ export class Carousel {
         }
 
         this.items.forEach((item, i) => {
-            item.className = "card carousel-item";
-            if (i === this.currentIdx) {
-                item.classList.add("active");
-            } else if (i === this.currentIdx - 1 || (this.currentIdx === 0 && i === this.items.length - 1)) {
-                item.classList.add("prev");
-            } else if (i === this.currentIdx + 1 || (this.currentIdx === this.items.length - 1 && i === 0)) {
-                item.classList.add("next");
-            }
+            let cls = "card carousel-item";
+            if (i === this.currentIdx) cls += " active";
+            else if (i === this.currentIdx - 1 || (this.currentIdx === 0 && i === this.items.length - 1)) cls += " prev";
+            else if (i === this.currentIdx + 1 || (this.currentIdx === this.items.length - 1 && i === 0)) cls += " next";
+            item.className = cls;
         });
     }
 
+    _navigate(nextIdx) {
+        if (this.items.length === 0 || this.transitioning) return;
+        this.transitioning = true;
+        this.update(nextIdx);
+
+        const activeItem = this.items[this.currentIdx];
+        let done = false;
+        const unlock = () => {
+            if (done) return;
+            done = true;
+            this.transitioning = false;
+        };
+        activeItem.addEventListener('transitionend', unlock, { once: true });
+        setTimeout(unlock, Carousel.TRANSITION_DURATION + 50);
+    }
+
     next() {
-        if (this.items.length === 0) return;
-        this.update(this.currentIdx === this.items.length - 1 ? 0 : this.currentIdx + 1);
+        this._navigate(this.currentIdx === this.items.length - 1 ? 0 : this.currentIdx + 1);
     }
 
     prev() {
-        if (this.items.length === 0) return;
-        this.update(this.currentIdx === 0 ? this.items.length - 1 : this.currentIdx - 1);
+        this._navigate(this.currentIdx === 0 ? this.items.length - 1 : this.currentIdx - 1);
     }
 
     goTo(index) {
-        this.update(index);
+        this._navigate(index);
     }
 
     initEvents() {
@@ -64,8 +79,8 @@ export class Carousel {
 
             this.track.addEventListener('touchend', e => {
                 touchEndX = e.changedTouches[0].screenX;
-                if (touchEndX < touchStartX - 40) this.next(); // Swipe left
-                if (touchEndX > touchStartX + 40) this.prev(); // Swipe right
+                if (touchEndX < touchStartX - Carousel.SWIPE_THRESHOLD) this.next();
+                if (touchEndX > touchStartX + Carousel.SWIPE_THRESHOLD) this.prev();
             }, { passive: true });
         }
     }
