@@ -156,7 +156,8 @@
       "type": "webapp",
       "tech": ["TypeScript", "Next.js", "Tailwind CSS"],
       "github": "https://github.com/Vegm92/glow-dental.git",
-      "screenshot": "screenshots/glow-dental.png"
+      "screenshot": "screenshots/glow-dental.png",
+      "_hidden": true
     }
   ]
 }

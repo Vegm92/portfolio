@@ -30,7 +30,8 @@ async function renderProjects() {
   try {
     const data = configData;
 
-    const numProjects = data.projects.length;
+    const visibleProjects = data.projects.filter(p => !p._hidden);
+    const numProjects = visibleProjects.length;
     if ($("#aboutShipped"))
       $("#aboutShipped").textContent = `${numProjects} projects`;
 
@@ -66,7 +67,7 @@ async function renderProjects() {
     if ($("#aboutLanguages")) $("#aboutLanguages").textContent = coreStack;
     if ($("#aboutAiTools")) $("#aboutAiTools").textContent = topAi;
 
-    const projects = data.projects || [];
+    const projects = (data.projects || []).filter(p => !p._hidden);
     track.innerHTML = "";
 
     const carousel = new Carousel(
@@ -86,11 +87,16 @@ async function renderProjects() {
       if (project.screenshot) {
         const img = document.createElement("img");
         img.alt = project.name;
-        img.loading = index === 0 ? "eager" : "lazy";
+        img.width = 320;
+        img.height = 180;
+        img.loading = "eager";
         img.onload = () => {
           shotDiv.innerHTML = "";
           shotDiv.appendChild(img);
-          img.classList.add("loaded");
+        };
+        img.onerror = () => {
+          shotDiv.querySelector(".shot-filename").textContent =
+            `${project.name.toLowerCase()}.png`;
         };
         img.src = `public/${project.screenshot}`;
       } else {
