@@ -5,6 +5,11 @@ node_modules/
 .svelte-kit/
 /build
 /dist
+cf-worker/
+
+# test artifacts
+test-results/
+test-results
 
 # OS
 .DS_Store
@@ -19,3 +24,8 @@ Thumbs.db
 CLAUDE.md
 REFERENCES.md
 CONTEXT.md
+
+# Context bot
+!/public\vic-context.md
+
+
