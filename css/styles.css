@@ -1151,6 +1151,7 @@ footer {
 .agent-panel {
   position: absolute;
   right: 0;
+  left: auto;
   bottom: 80px;
   width: 380px;
   max-width: calc(100vw - 48px);
