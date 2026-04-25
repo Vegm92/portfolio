@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/victo/**)",
+      "Read(//c/c/Users/victo/**)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "WebFetch(domain:developers.cloudflare.com)",
+      "Bash(npx playwright *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Skill(claude-api)",
+      "Skill(claude-api:*)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\victo"
+    ]
+  }
+}

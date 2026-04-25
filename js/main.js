@@ -2,13 +2,12 @@ import { Carousel } from "./carousel.js";
 
 const $ = (s) => document.querySelector(s);
 
-let stackSet, aiSet, configData;
+let aiSet, configData;
 
 async function loadConfig() {
   try {
     const res = await fetch("public/config.json");
     configData = await res.json();
-    stackSet = new Set(configData.stackSet.map(t => t.toLowerCase()));
     aiSet = new Set(configData.aiSet.map(t => t.toLowerCase()));
   } catch (e) {
     console.error("Failed to load config:", e);
@@ -45,24 +44,23 @@ async function renderProjects() {
       (a, b) => techCounts[b] - techCounts[a],
     );
 
-    let stack = [],
-      aiTools = [],
-      tools = [];
+    let aiTools = [];
     sortedTech.forEach((t) => {
       const lower = t.toLowerCase();
       if (aiSet.has(lower) || lower.includes("ai") || lower.includes("claude"))
         aiTools.push(t);
-      else if (stackSet.has(lower)) stack.push(t);
-      else tools.push(t);
     });
 
-    const topStack = stack.slice(0, 7).join(" · ") || "TS · Python · React";
     const topAi = aiTools.slice(0, 7).join(" · ") || "Claude · Gemini";
-    const topTools = tools.slice(0, 7).join(" · ") || "Vite · Playwright";
 
-    if ($("#heroStack")) $("#heroStack").textContent = topStack;
-    if ($("#heroTools")) $("#heroTools").textContent = topTools;
-    if ($("#aboutLanguages")) $("#aboutLanguages").textContent = topStack;
+    const coreStack = (configData.stack || [])
+      .sort((a, b) => b.proficiency - a.proficiency)
+      .slice(0, 5)
+      .map(t => t.name)
+      .join(" · ");
+
+    if ($("#heroCoreStack")) $("#heroCoreStack").textContent = coreStack;
+    if ($("#aboutLanguages")) $("#aboutLanguages").textContent = coreStack;
     if ($("#aboutAiTools")) $("#aboutAiTools").textContent = topAi;
 
     const projects = data.projects || [];

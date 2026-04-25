@@ -9,7 +9,6 @@ cf-worker/
 
 # test artifacts
 test-results/
-test-results
 
 # OS
 .DS_Store
@@ -29,3 +28,4 @@ CONTEXT.md
 !/public\vic-context.md
 
 
+test-results/.last-run.json
