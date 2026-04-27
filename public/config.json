@@ -131,14 +131,14 @@
       "github": "https://github.com/Vegm92/infographic-video-generator.git",
       "screenshot": "screenshots/reelforge.png"
     },
-    {
+{
       "name": "Automated Content Channel",
       "version": "1.0.0",
       "description": "Headless video production pipeline using multi-agent swarms. Orchestrates research, scriptwriting, and editing into an end-to-end automated flow.",
       "type": "automation",
       "tech": ["Python", "Claude API", "Muapi.ai"],
-      "github": "https://github.com/Vegm92/automated-content-channel.git",
-      "screenshot": "screenshots/automated-content-channel.png"
+      "github": "https://github.com/Vegm92/automated-content-channel",
+      "_hidden": true
     },
     {
       "name": "AutoAffiliate",
