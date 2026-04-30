@@ -20,22 +20,22 @@ Best contact: victorgranda1992@gmail.com
 ## Tech Stack
 
 ### Languages
-- TypeScript — Expert (95%)
-- JavaScript — Expert (92%)
-- Python — Advanced (88%)
-- Node.js — Expert (88%)
+- TypeScript — Proficient
+- JavaScript — Proficient
+- Python — Proficient
+- Node.js — Working knowledge
 
 ### Frameworks
-- React — Expert (92%)
-- Next.js — Advanced (85%)
-- Express.js — Advanced (82%)
-- Tailwind CSS — Expert (90%)
+- React — Proficient
+- Next.js — Working knowledge
+- SvelteKit — Working knowledge
+- Tailwind CSS — Proficient
 
 ### AI & Infrastructure
-- Claude SDK / Gemini — Expert (95%)
-- n8n / Automation — Advanced (87%)
-- MongoDB — Advanced (80%)
-- Docker / Vercel — Intermediate (75%)
+- Claude SDK / Gemini — Working knowledge
+- n8n / Automation — Working knowledge
+- MongoDB — Working knowledge
+- Docker / Vercel — Learning
 
 ---
 
@@ -65,19 +65,21 @@ Best contact: victorgranda1992@gmail.com
 
 ---
 
-## AI & Automation Focus
+## AI & Automation
 
-AI isn't a feature for Victor — it's a force multiplier. He builds with Claude SDK,
-Gemini, and OpenAI to create real pipelines, multi-agent workflows, and content
-automation at scale.
+Victor has used Claude SDK and Gemini API in several personal projects — adding AI
+features like structured data extraction, script generation, and content automation.
+He's comfortable reading docs, wiring APIs, and getting things working, but considers
+himself still learning in this area.
 
 ---
 
 ## Victor's Strengths
 
-Victor's sweet spot is building AI-native products end-to-end — from data layer and
-APIs through to the actual interface. He's particularly strong at wiring AI models into
-real workflows that ship fast and work reliably.
+Victor is a quick learner who picks things up by building. His base is the MERN stack
+(MongoDB, Express, React, Node.js) with TypeScript throughout. He's shipped several
+personal and family projects from scratch — frontend to backend to deployment. No
+professional experience yet, but genuinely motivated and easy to work with.
 
 ---
 

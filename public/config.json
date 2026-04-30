@@ -107,7 +107,7 @@
     {
       "name": "Farmacia Granda",
       "version": "0.1.0",
-      "description": "Modern e-commerce and health platform for a neighborhood pharmacy, bridging the gap between traditional healthcare and digital convenience.",
+      "description": "E-commerce site for a neighborhood pharmacy. Built with Next.js and Shadcn UI — my first real project using a component library and server-side rendering.",
       "type": "webapp",
       "tech": ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
       "github": "https://github.com/Vegm92/farmacia-granda-web-rework.git",
@@ -116,7 +116,7 @@
     {
       "name": "Mise en Place",
       "version": "0.0.1",
-      "description": "Smart kitchen and recipe manager powered by Gemini AI. Extracts structured data from text or images to optimize culinary workflows.",
+      "description": "Recipe manager that uses Gemini AI to extract structured data from text or photos. First time I built a full-stack app with SvelteKit, a real DB schema, and an AI integration.",
       "type": "webapp",
       "tech": ["SvelteKit", "Vite", "Drizzle ORM", "SQLite", "Gemini AI"],
       "github": "https://github.com/Vegm92/mise-en-place-sk.git",
@@ -125,7 +125,7 @@
     {
       "name": "Reelforge",
       "version": "1.0.0",
-      "description": "AI-powered programmatic video pipeline using Remotion. Automatically creates high-impact vertical infographics from trending data.",
+      "description": "Programmatic video generator using Remotion and Claude SDK. Takes trending data and renders vertical infographic videos automatically — built to learn how code-driven video works.",
       "type": "webapp",
       "tech": ["TypeScript", "React", "Remotion", "Claude SDK"],
       "github": "https://github.com/Vegm92/infographic-video-generator.git",
@@ -143,7 +143,7 @@
     {
       "name": "AutoAffiliate",
       "version": "1.0.0",
-      "description": "AI-powered affiliate marketing platform that generates comprehensive product reviews using Anthropic Claude. Features SEO optimization, affiliate link management, and automated content creation.",
+      "description": "Affiliate content tool that generates product reviews using Claude. Built to explore how AI fits into a real content workflow — handles SEO basics and affiliate link management.",
       "type": "webapp",
       "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Anthropic AI"],
       "github": "https://github.com/Vegm92/AutoAffiliate.git",
