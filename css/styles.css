@@ -596,6 +596,12 @@ footer {
   letter-spacing: 0.01em;
 }
 
+.card-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
 .card-cta {
   display: inline-flex;
   align-items: center;
@@ -636,6 +642,18 @@ footer {
   &:hover .ext-arrow {
     transform: translate(2px, -2px);
     opacity: 1;
+  }
+}
+
+.card-cta--demo {
+  background: rgba(255, 181, 71, 0.1);
+  border-color: rgba(255, 181, 71, 0.22);
+  color: var(--signal);
+
+  &:hover {
+    background: rgba(255, 181, 71, 0.18);
+    border-color: rgba(255, 181, 71, 0.5);
+    box-shadow: 0 8px 24px -8px rgba(255, 181, 71, 0.3);
   }
 }
 

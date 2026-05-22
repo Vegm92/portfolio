@@ -125,6 +125,13 @@ async function renderProjects() {
         cta.style.pointerEvents = "none";
       }
 
+      const demo = clone.querySelector(".card-cta--demo");
+      if (project.demo) {
+        demo.href = project.demo;
+      } else {
+        demo.style.display = "none";
+      }
+
       card.addEventListener("click", (e) => {
         if (!card.classList.contains("active")) {
           e.preventDefault();

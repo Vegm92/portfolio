@@ -102,6 +102,7 @@
       "type": "presentation",
       "tech": ["React", "Vite", "Tailwind CSS", "Swiper"],
       "github": "https://github.com/Vegm92/byd.git",
+      "demo": "https://vegm92.github.io/byd/",
       "screenshot": "screenshots/byd-presentation.png"
     },
     {
@@ -111,6 +112,7 @@
       "type": "webapp",
       "tech": ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
       "github": "https://github.com/Vegm92/farmacia-granda-web-rework.git",
+      "demo": "https://vegm92.github.io/farmacia-granda-web-rework/",
       "screenshot": "screenshots/farmacia-granda.png"
     },
     {
