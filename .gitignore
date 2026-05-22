@@ -35,3 +35,7 @@ test-results/.last-run.json
 CONTEXT.md
 REFERENCES.md
 PRD.md
+
+# Ignore all markdown except README
+*.md
+!README.md
