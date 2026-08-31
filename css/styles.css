@@ -439,6 +439,10 @@ footer {
 }
 
 /* Screenshot area */
+.card-shot.has-shot .card-shot-placeholder {
+  display: none;
+}
+
 .card-shot {
   width: 100%;
   aspect-ratio: 16 / 9;

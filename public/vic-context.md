@@ -83,27 +83,37 @@ migrations, 248 test suites, 40 architecture decision records.
 
 ## Other projects
 
-1. **BYD Interactive Presentation** — client-facing interactive kiosk app for BYD ATTO 2
-   DM-i European sales training. Delivered from requirements to production.
-   React, Vite, Tailwind CSS, Swiper.
+These are the repositories Victor pins on his GitHub profile — the work he wants judged.
 
-2. **Reelforge** — programmatic video pipeline rendering vertical infographic videos from
-   trending data. Orchestrates multi-step AI work (script → voice → render) with async job
-   queues and error recovery. TypeScript, React, Remotion, Claude SDK, ElevenLabs.
+1. **Glow Dental** (`dentalBI`) — dental clinic management SaaS: appointments, patient records,
+   billing and clinic settings. A pnpm monorepo with a typed contract package shared between the
+   frontend and the API, built test-first with Jest and Playwright. The Next.js 14 front end is
+   complete; the Express/Mongo backend is the next piece, so treat it as a front-end and
+   architecture showcase rather than a running product.
+   Next.js 14, TypeScript, React Query, Redux Toolkit, Sass Modules, Jest, Playwright.
 
-3. **Fleet Control** — real-time React app for live-event fleet management, built for and
-   used by his own operations crew: 21 vehicles, sequential checkpoint locking, Excel
-   exports. An operational need he solved with custom software.
+2. **Automated Content Channel** — a five-agent pipeline taking a trending topic to a finished
+   vertical video: trend scout → script strategy → visual production → scheduling → analytics.
+   n8n orchestrates the agents on a daily cron, Claude does the reasoning, and each run produces a
+   shot-by-shot production pack. Python, n8n, Claude API, Supabase, Muapi.ai.
+
+3. **BYD Interactive Presentation** — client-facing interactive kiosk app for BYD ATTO 2 DM-i
+   European sales training, delivered from requirements to production. Runs full-screen with
+   tactile navigation. React, Vite, Tailwind CSS, Swiper.
 
 4. **Farmacia Granda** — e-commerce site for a neighbourhood pharmacy.
    Next.js, React, Tailwind CSS, Shadcn UI.
 
-5. **AutoAffiliate** — affiliate content platform generating product reviews with Claude.
-   Node pipelines for content generation, SEO and affiliate link management, OAuth 2.0.
-   React, TypeScript, Vite, Tailwind CSS, Anthropic AI.
+5. **This portfolio** — no framework and no build step: plain HTML, ES modules and CSS nesting,
+   with every project and skill rendered from a single `config.json`. The chat widget you're
+   talking to is a Cloudflare Worker grounded on this document.
+   JavaScript, CSS, Cloudflare Workers, Gemini, Playwright.
 
-6. **Gmail Automation Suite** — Google Apps Script automation (auto-labelling, daily HTML
-   digest, weekly unread digest) that removed manual inbox triage.
+Earlier work not currently showcased includes **Reelforge** (programmatic video pipeline on
+Remotion and the Claude SDK), **AutoAffiliate** (Claude-generated affiliate content with OAuth 2.0),
+**Fleet Control** (real-time React app his own events crew used across a 21-vehicle fleet) and a
+**Gmail automation suite** in Google Apps Script. Mention these only if someone asks for more
+than the pinned projects.
 
 ---
 

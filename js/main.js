@@ -256,16 +256,17 @@ async function renderProjects() {
         img.alt = project.name;
         img.width = 320;
         img.height = 180;
-        img.loading = "eager";
-        img.onload = () => {
-          shotDiv.innerHTML = "";
-          shotDiv.appendChild(img);
-        };
-        img.onerror = () => {
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.addEventListener("load", () => shotDiv.classList.add("has-shot"));
+        img.addEventListener("error", () => {
+          img.remove();
+          shotDiv.classList.remove("has-shot");
           shotDiv.querySelector(".shot-filename").textContent =
             `${project.name.toLowerCase()}.png`;
-        };
+        });
         img.src = `public/${project.screenshot}`;
+        shotDiv.appendChild(img);
       } else {
         clone.querySelector(".shot-filename").textContent =
           `${project.name.toLowerCase()}.png`;

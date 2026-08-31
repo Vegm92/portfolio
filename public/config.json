@@ -225,6 +225,38 @@
       ]
     },
     {
+      "name": "Glow Dental",
+      "version": "1.0.0",
+      "description": "Dental clinic management SaaS — appointments, patient records, billing and clinic settings. A pnpm monorepo with a typed contract package shared between frontend and API, built test-first with Jest and Playwright. Next.js front end is complete; the Express/Mongo backend is the next piece.",
+      "type": "saas",
+      "tech": [
+        "Next.js 14",
+        "TypeScript",
+        "React Query",
+        "Redux Toolkit",
+        "Sass Modules",
+        "Jest",
+        "Playwright"
+      ],
+      "github": "https://github.com/Vegm92/dentalBI",
+      "screenshot": "screenshots/dentalbi.png"
+    },
+    {
+      "name": "Automated Content Channel",
+      "version": "1.0.0",
+      "description": "Five-agent pipeline that takes a trending topic to a finished vertical video: trend scout, script strategy, visual production, scheduling and analytics. n8n orchestrates the agents on a daily cron, Claude does the reasoning, and the run output is a shot-by-shot production pack.",
+      "type": "automation",
+      "tech": [
+        "Python",
+        "n8n",
+        "Claude API",
+        "Supabase",
+        "Muapi.ai"
+      ],
+      "github": "https://github.com/Vegm92/automated-content-channel",
+      "screenshot": "screenshots/automated-content-channel.png"
+    },
+    {
       "name": "BYD Interactive Presentation",
       "version": "1.0.0",
       "description": "Interactive presentation app built for BYD ATTO 2 DM-i European sales training. Runs full-screen on kiosks with tactile navigation, delivered client-facing from requirements to production.",
@@ -235,23 +267,9 @@
         "Tailwind CSS",
         "Swiper"
       ],
-      "github": "https://github.com/Vegm92/byd.git",
+      "github": "https://github.com/Vegm92/byd",
       "demo": "https://vegm92.github.io/byd/",
       "screenshot": "screenshots/byd-presentation.png"
-    },
-    {
-      "name": "Reelforge",
-      "version": "1.0.0",
-      "description": "Programmatic video pipeline that renders vertical infographic videos from trending data. Orchestrates multi-step AI work — script, voice, render — through Remotion and the Claude SDK with async job queues and error recovery.",
-      "type": "automation",
-      "tech": [
-        "TypeScript",
-        "React",
-        "Remotion",
-        "Claude SDK"
-      ],
-      "github": "https://github.com/Vegm92/infographic-video-generator.git",
-      "screenshot": "screenshots/reelforge.png"
     },
     {
       "name": "Farmacia Granda",
@@ -264,9 +282,40 @@
         "Tailwind CSS",
         "Shadcn UI"
       ],
-      "github": "https://github.com/Vegm92/farmacia-granda-web-rework.git",
+      "github": "https://github.com/Vegm92/farmacia-granda-web-rework",
       "demo": "https://vegm92.github.io/farmacia-granda-web-rework/",
       "screenshot": "screenshots/farmacia-granda.png"
+    },
+    {
+      "name": "This portfolio",
+      "version": "2.0.0",
+      "description": "The site you're on. No framework and no build step — plain HTML, ES modules and CSS nesting, with every project and skill rendered from a single config.json. The chat widget in the corner is a Cloudflare Worker grounded on a markdown knowledge base.",
+      "type": "web",
+      "tech": [
+        "JavaScript",
+        "CSS",
+        "Cloudflare Workers",
+        "Gemini",
+        "Playwright"
+      ],
+      "github": "https://github.com/Vegm92/portfolio",
+      "demo": "https://vegm92.github.io/portfolio/",
+      "screenshot": "screenshots/portfolio.png"
+    },
+    {
+      "name": "Reelforge",
+      "version": "1.0.0",
+      "description": "Programmatic video pipeline that renders vertical infographic videos from trending data. Orchestrates multi-step AI work — script, voice, render — through Remotion and the Claude SDK with async job queues and error recovery.",
+      "type": "automation",
+      "tech": [
+        "TypeScript",
+        "React",
+        "Remotion",
+        "Claude SDK"
+      ],
+      "github": "https://github.com/Vegm92/infographic-video-generator",
+      "screenshot": "screenshots/reelforge.png",
+      "_hidden": true
     },
     {
       "name": "AutoAffiliate",
@@ -280,34 +329,8 @@
         "Tailwind CSS",
         "Anthropic AI"
       ],
-      "github": "https://github.com/Vegm92/AutoAffiliate.git",
-      "screenshot": "screenshots/automated-affiliate.png"
-    },
-    {
-      "name": "Automated Content Channel",
-      "version": "1.0.0",
-      "description": "Headless video production pipeline using multi-agent swarms. Orchestrates research, scriptwriting, and editing into an end-to-end automated flow.",
-      "type": "automation",
-      "tech": [
-        "Python",
-        "Claude API",
-        "Muapi.ai"
-      ],
-      "github": "https://github.com/Vegm92/automated-content-channel",
-      "_hidden": true
-    },
-    {
-      "name": "Glow Dental",
-      "version": "1.0.0",
-      "description": "Modern dental clinic website with appointment booking, service showcase, and patient Portal integration.",
-      "type": "webapp",
-      "tech": [
-        "TypeScript",
-        "Next.js",
-        "Tailwind CSS"
-      ],
-      "github": "https://github.com/Vegm92/glow-dental.git",
-      "screenshot": "screenshots/glow-dental.png",
+      "github": "https://github.com/Vegm92/AutoAffiliate",
+      "screenshot": "screenshots/automated-affiliate.png",
       "_hidden": true
     }
   ]
