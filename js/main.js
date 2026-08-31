@@ -61,7 +61,7 @@ function renderFeatured() {
           fig.className = "fp-frame";
           const img = document.createElement("img");
           img.src = `public/${frame.src}`;
-          img.alt = `${project.name} — ${frame.caption || "product screenshot"}`;
+          img.alt = `${project.name}: ${frame.caption || "product screenshot"}`;
           img.loading = "lazy";
           img.decoding = "async";
           img.addEventListener("error", () => fig.remove());
