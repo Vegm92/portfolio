@@ -45,9 +45,7 @@ function renderFeatured() {
     status.hidden = !project.status;
   }
 
-  const shot = root.querySelector("#fpShot");
-  const shotCaption = root.querySelector("#fpShotCaption");
-  const thumbs = root.querySelector("#fpThumbs");
+  const galleryRoot = root.querySelector("#fpGallery");
 
   const gallery = project.gallery?.length
     ? project.gallery
@@ -55,55 +53,30 @@ function renderFeatured() {
       ? [{ src: project.screenshot, caption: "" }]
       : [];
 
-  if (shot && gallery.length) {
-    shot.addEventListener("error", () => {
-      shot.closest(".fp-shot")?.classList.add("fp-shot--empty");
-    });
-
-    const buttons = [];
-    const show = (i) => {
-      const frame = gallery[i];
-      shot.src = `public/${frame.src}`;
-      shot.alt = `${project.name} — ${frame.caption || "product screenshot"}`;
-      if (shotCaption) shotCaption.textContent = frame.caption || "";
-      buttons.forEach((b, n) => {
-        b.classList.toggle("is-active", n === i);
-        b.setAttribute("aria-selected", String(n === i));
-        b.tabIndex = n === i ? 0 : -1;
-      });
-    };
-
-    if (thumbs && gallery.length > 1) {
-      gallery.forEach((frame, i) => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "fp-thumb";
-        b.setAttribute("role", "tab");
-        b.title = frame.caption || `Screen ${i + 1}`;
-        b.setAttribute("aria-label", frame.caption || `Screen ${i + 1}`);
-        const img = document.createElement("img");
-        img.src = `public/${frame.src}`;
-        img.alt = "";
-        img.loading = "lazy";
-        img.decoding = "async";
-        b.appendChild(img);
-        b.addEventListener("click", () => show(i));
-        b.addEventListener("keydown", (e) => {
-          const delta = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-          if (!delta) return;
-          e.preventDefault();
-          const next = (i + delta + gallery.length) % gallery.length;
-          show(next);
-          buttons[next].focus();
-        });
-        thumbs.appendChild(b);
-        buttons.push(b);
-      });
+  if (galleryRoot) {
+    if (gallery.length) {
+      galleryRoot.replaceChildren(
+        ...gallery.map((frame) => {
+          const fig = document.createElement("figure");
+          fig.className = "fp-frame";
+          const img = document.createElement("img");
+          img.src = `public/${frame.src}`;
+          img.alt = `${project.name} — ${frame.caption || "product screenshot"}`;
+          img.loading = "lazy";
+          img.decoding = "async";
+          img.addEventListener("error", () => fig.remove());
+          fig.appendChild(img);
+          if (frame.caption) {
+            const caption = document.createElement("figcaption");
+            caption.textContent = frame.caption;
+            fig.appendChild(caption);
+          }
+          return fig;
+        }),
+      );
+    } else {
+      galleryRoot.closest(".fp-shot")?.classList.add("fp-shot--empty");
     }
-
-    show(0);
-  } else if (shot) {
-    shot.closest(".fp-shot")?.classList.add("fp-shot--empty");
   }
 
   const metrics = root.querySelector("#fpMetrics");
