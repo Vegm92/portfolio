@@ -37,6 +37,9 @@
 
     /* Nav height */
     --nav-height: 56px;
+    /* Height of the sticky mobile header, kept in sync with JS; falls back
+       to --nav-height when JS hasn't measured it yet. */
+    --nav-offset: 0px;
 
     /* Spacing: Fluid (containers) */
     --space-container: clamp(16px, 4vw, 40px);

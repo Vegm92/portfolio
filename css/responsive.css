@@ -2,6 +2,10 @@
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
+  :root {
+    --nav-offset: var(--nav-height);
+  }
+
   .layout {
     grid-template-columns: 1fr;
     border-left: 0;

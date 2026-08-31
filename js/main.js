@@ -334,7 +334,23 @@ async function loadStack() {
   }
 }
 
+function initNavOffset() {
+  const sidebar = $(".sidebar");
+  if (!sidebar) return;
+
+  const mobileNav = window.matchMedia("(max-width: 900px)");
+  const update = () => {
+    const offset = mobileNav.matches ? sidebar.offsetHeight : 0;
+    document.documentElement.style.setProperty("--nav-offset", `${offset}px`);
+  };
+
+  update();
+  mobileNav.addEventListener("change", update);
+  new ResizeObserver(update).observe(sidebar);
+}
+
 document.addEventListener("DOMContentLoaded", async function () {
+  initNavOffset();
   await loadConfig();
   if (!configData) {
     const track = $("#carouselTrack");
