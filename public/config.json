@@ -6,7 +6,8 @@
     "muapi.ai",
     "mcp",
     "elevenlabs",
-    "claude"
+    "claude",
+    "gemini"
   ],
   "stack": [
     {
@@ -14,151 +15,322 @@
       "icon": "ri-command-line",
       "level": "Advanced",
       "category": "Languages",
-      "proficiency": 85
+      "proficiency": 90
+    },
+    {
+      "name": "Node.js",
+      "icon": "ri-nodejs-line",
+      "level": "Advanced",
+      "category": "Languages",
+      "proficiency": 86
     },
     {
       "name": "JavaScript",
       "icon": "ri-javascript-line",
       "level": "Advanced",
       "category": "Languages",
-      "proficiency": 82
+      "proficiency": 85
     },
     {
       "name": "Python",
       "icon": "ri-python-line",
-      "level": "Advanced",
+      "level": "Intermediate",
       "category": "Languages",
-      "proficiency": 80
+      "proficiency": 72
+    },
+    {
+      "name": "SvelteKit",
+      "icon": "ri-svelte-line",
+      "level": "Advanced",
+      "category": "Frameworks",
+      "proficiency": 88
     },
     {
       "name": "React",
       "icon": "ri-reactjs-line",
       "level": "Advanced",
       "category": "Frameworks",
-      "proficiency": 80
-    },
-    {
-      "name": "Node.js",
-      "icon": "ri-nodejs-line",
-      "level": "Intermediate",
-      "category": "Languages",
-      "proficiency": 78
+      "proficiency": 84
     },
     {
       "name": "Next.js",
       "icon": "ri-nextjs-line",
       "level": "Intermediate",
       "category": "Frameworks",
-      "proficiency": 77
-    },
-    {
-      "name": "Express.js",
-      "icon": "ri-server-line",
-      "level": "Intermediate",
-      "category": "Frameworks",
-      "proficiency": 75
-    },
-    {
-      "name": "MongoDB",
-      "icon": "ri-database-2-line",
-      "level": "Intermediate",
-      "category": "AI & Infra",
-      "proficiency": 75
+      "proficiency": 76
     },
     {
       "name": "Tailwind CSS",
       "icon": "ri-css3-line",
-      "level": "Intermediate",
+      "level": "Advanced",
       "category": "Frameworks",
-      "proficiency": 70
+      "proficiency": 80
     },
     {
-      "name": "Claude / Gemini",
+      "name": "PostgreSQL",
+      "icon": "ri-database-2-line",
+      "level": "Advanced",
+      "category": "Data & AI",
+      "proficiency": 82
+    },
+    {
+      "name": "Drizzle ORM",
+      "icon": "ri-database-line",
+      "level": "Advanced",
+      "category": "Data & AI",
+      "proficiency": 84
+    },
+    {
+      "name": "Gemini / Claude SDK",
       "icon": "ri-robot-3-line",
-      "level": "Intermediate",
-      "category": "AI & Infra",
-      "proficiency": 68
+      "level": "Advanced",
+      "category": "Data & AI",
+      "proficiency": 82
     },
     {
-      "name": "n8n / Automation",
-      "icon": "ri-flow-chart",
-      "level": "Intermediate",
-      "category": "AI & Infra",
-      "proficiency": 68
+      "name": "REST APIs / Webhooks",
+      "icon": "ri-exchange-line",
+      "level": "Advanced",
+      "category": "Data & AI",
+      "proficiency": 85
     },
     {
-      "name": "Docker / Vercel",
+      "name": "Auth.js / OAuth 2.0",
+      "icon": "ri-shield-keyhole-line",
+      "level": "Advanced",
+      "category": "Platform & Ops",
+      "proficiency": 80
+    },
+    {
+      "name": "Stripe",
+      "icon": "ri-bank-card-line",
+      "level": "Intermediate",
+      "category": "Platform & Ops",
+      "proficiency": 74
+    },
+    {
+      "name": "Docker / Railway",
       "icon": "ri-instance-line",
       "level": "Intermediate",
-      "category": "AI & Infra",
-      "proficiency": 60
+      "category": "Platform & Ops",
+      "proficiency": 72
+    },
+    {
+      "name": "GitHub Actions / CI",
+      "icon": "ri-git-merge-line",
+      "level": "Advanced",
+      "category": "Platform & Ops",
+      "proficiency": 80
+    },
+    {
+      "name": "Vitest / Playwright",
+      "icon": "ri-test-tube-line",
+      "level": "Advanced",
+      "category": "Platform & Ops",
+      "proficiency": 78
+    },
+    {
+      "name": "n8n / Make.com",
+      "icon": "ri-flow-chart",
+      "level": "Advanced",
+      "category": "Platform & Ops",
+      "proficiency": 80
     }
   ],
   "projects": [
     {
+      "name": "Mise en Place",
+      "version": "0.0.1",
+      "_featured": true,
+      "tagline": "AI delivery-note intelligence for restaurants",
+      "status": "Private beta",
+      "role": "Solo builder & owner — product, architecture, delivery and ops",
+      "type": "saas",
+      "description": "A restaurant photographs a supplier delivery note; Gemini extracts the supplier, header fields and every line with per-field confidence, and the owner only confirms what the model was unsure about. From there it becomes a daily queue ranked by euros at stake, spend analytics by item and category, unit-normalised price tracking that catches a supplier's quiet increases, budgets, payment reminders and a chat assistant over the restaurant's own purchasing data. Spanish-first and bilingual, built for independent restaurants and small groups.",
+      "highlights": [
+        {
+          "title": "Extraction that degrades gracefully",
+          "body": "Text-PDF fast path, vision fallback and retries on the Gemini call, with per-field confidence driving a guided review of only the fields the model doubted. Structured e-invoices (Facturae 3.2.x, UBL 2.1) and VERI*FACTU QR codes are parsed directly — no AI pass, no cost, no error bar."
+        },
+        {
+          "title": "Comparing prices that aren't comparable",
+          "body": "Suppliers quote the same product as a 5L garrafa, a 12-unit caja or a loose kg. Pack size, units per pack and base unit are resolved per line so everything normalises to €/L, €/kg or €/ud — which is what makes \"this went up 8%\" a true statement rather than a packaging artefact."
+        },
+        {
+          "title": "Multi-tenancy the CI enforces",
+          "body": "Every business table carries restaurant_id and every query goes through forTenant().scope(). A custom lint invariant runs in CI and fails the build on an unscoped tenant query, so the boundary can't quietly rot as the schema grows."
+        },
+        {
+          "title": "Real async infrastructure",
+          "body": "Extraction runs in a separate worker process off a pg-boss queue with dead-letter handling and an ops dashboard. Nightly jobs refresh the analytics materialised views; scheduled jobs drive the weekly AI digest and the overdue-invoice and trial-expiry emails."
+        },
+        {
+          "title": "Shipped like a product, not a demo",
+          "body": "Auth.js credentials + Google OAuth, Stripe billing with per-tier entitlement gating, Sentry, Upstash rate limiting, object storage, feature flags, an admin surface for revenue, health and dead letters — and an invoice bot on WhatsApp as the MVP ingestion channel."
+        }
+      ],
+      "metrics": [
+        {
+          "value": "55K",
+          "label": "lines TS & Svelte"
+        },
+        {
+          "value": "44",
+          "label": "Postgres tables"
+        },
+        {
+          "value": "248",
+          "label": "test suites"
+        },
+        {
+          "value": "40",
+          "label": "architecture decision records"
+        }
+      ],
+      "tech": [
+        "SvelteKit 2",
+        "Svelte 5",
+        "TypeScript",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "Gemini AI",
+        "Auth.js",
+        "Stripe",
+        "pg-boss",
+        "Railway",
+        "Sentry",
+        "Tailwind CSS"
+      ],
+      "github": "https://github.com/Vegm92/mise-en-place-sk",
+      "demo": "https://mise-place.com",
+      "demoLabel": "Visit mise-place.com",
+      "screenshot": "screenshots/mise-en-place.png",
+      "gallery": [
+        {
+          "src": "screenshots/mise-en-place.png",
+          "caption": "Resumen — the day's queue, ranked by euros at stake"
+        },
+        {
+          "src": "screenshots/mise-en-place-invoices.png",
+          "caption": "Albaranes — review state per delivery note, bulk actions, Excel export"
+        },
+        {
+          "src": "screenshots/mise-en-place-spend.png",
+          "caption": "Análisis de gasto — spend by item and supplier category"
+        },
+        {
+          "src": "screenshots/mise-en-place-prices.png",
+          "caption": "Seguimiento de precios — unit-normalised price movement per product"
+        }
+      ]
+    },
+    {
+      "name": "Glow Dental",
+      "version": "1.0.0",
+      "description": "Dental clinic management SaaS — appointments, patient records, billing and clinic settings. A pnpm monorepo with a typed contract package shared between frontend and API, built test-first with Jest and Playwright. Next.js front end is complete; the Express/Mongo backend is the next piece.",
+      "type": "saas",
+      "tech": [
+        "Next.js 14",
+        "TypeScript",
+        "React Query",
+        "Redux Toolkit",
+        "Sass Modules",
+        "Jest",
+        "Playwright"
+      ],
+      "github": "https://github.com/Vegm92/dentalBI",
+      "screenshot": "screenshots/dentalbi.png"
+    },
+    {
+      "name": "Automated Content Channel",
+      "version": "1.0.0",
+      "description": "Five-agent pipeline that takes a trending topic to a finished vertical video: trend scout, script strategy, visual production, scheduling and analytics. n8n orchestrates the agents on a daily cron, Claude does the reasoning, and the run output is a shot-by-shot production pack.",
+      "type": "automation",
+      "tech": [
+        "Python",
+        "n8n",
+        "Claude API",
+        "Supabase",
+        "Muapi.ai"
+      ],
+      "github": "https://github.com/Vegm92/automated-content-channel",
+      "screenshot": "screenshots/automated-content-channel.png"
+    },
+    {
       "name": "BYD Interactive Presentation",
       "version": "1.0.0",
-      "description": "Interactive presentation application for BYD ATTO 2 DM-i European Sales Training. Optimized for full-screen kiosks with tactile navigation.",
-      "type": "presentation",
-      "tech": ["React", "Vite", "Tailwind CSS", "Swiper"],
-      "github": "https://github.com/Vegm92/byd.git",
+      "description": "Interactive presentation app built for BYD ATTO 2 DM-i European sales training. Runs full-screen on kiosks with tactile navigation, delivered client-facing from requirements to production.",
+      "type": "client work",
+      "tech": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Swiper"
+      ],
+      "github": "https://github.com/Vegm92/byd",
       "demo": "https://vegm92.github.io/byd/",
       "screenshot": "screenshots/byd-presentation.png"
     },
     {
       "name": "Farmacia Granda",
       "version": "0.1.0",
-      "description": "E-commerce site for a neighborhood pharmacy. Built with Next.js and Shadcn UI — my first real project using a component library and server-side rendering.",
+      "description": "E-commerce site for a neighbourhood pharmacy, built with Next.js server rendering and a Shadcn UI component system.",
       "type": "webapp",
-      "tech": ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
-      "github": "https://github.com/Vegm92/farmacia-granda-web-rework.git",
+      "tech": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Shadcn UI"
+      ],
+      "github": "https://github.com/Vegm92/farmacia-granda-web-rework",
       "demo": "https://vegm92.github.io/farmacia-granda-web-rework/",
       "screenshot": "screenshots/farmacia-granda.png"
     },
     {
-      "name": "Mise en Place",
-      "version": "0.0.1",
-      "description": "Recipe manager that uses Gemini AI to extract structured data from text or photos. First time I built a full-stack app with SvelteKit, a real DB schema, and an AI integration.",
-      "type": "webapp",
-      "tech": ["SvelteKit", "Vite", "Drizzle ORM", "SQLite", "Gemini AI"],
-      "github": "https://github.com/Vegm92/mise-en-place-sk.git",
-      "screenshot": "screenshots/mise-en-place.png"
+      "name": "This portfolio",
+      "version": "2.0.0",
+      "description": "The site you're on. No framework and no build step — plain HTML, ES modules and CSS nesting, with every project and skill rendered from a single config.json. The chat widget in the corner is a Cloudflare Worker grounded on a markdown knowledge base.",
+      "type": "web",
+      "tech": [
+        "JavaScript",
+        "CSS",
+        "Cloudflare Workers",
+        "Gemini",
+        "Playwright"
+      ],
+      "github": "https://github.com/Vegm92/portfolio",
+      "demo": "https://vegm92.github.io/portfolio/",
+      "screenshot": "screenshots/portfolio.png"
     },
     {
       "name": "Reelforge",
       "version": "1.0.0",
-      "description": "Programmatic video generator using Remotion and Claude SDK. Takes trending data and renders vertical infographic videos automatically — built to learn how code-driven video works.",
-      "type": "webapp",
-      "tech": ["TypeScript", "React", "Remotion", "Claude SDK"],
-      "github": "https://github.com/Vegm92/infographic-video-generator.git",
-      "screenshot": "screenshots/reelforge.png"
-    },
-{
-      "name": "Automated Content Channel",
-      "version": "1.0.0",
-      "description": "Headless video production pipeline using multi-agent swarms. Orchestrates research, scriptwriting, and editing into an end-to-end automated flow.",
+      "description": "Programmatic video pipeline that renders vertical infographic videos from trending data. Orchestrates multi-step AI work — script, voice, render — through Remotion and the Claude SDK with async job queues and error recovery.",
       "type": "automation",
-      "tech": ["Python", "Claude API", "Muapi.ai"],
-      "github": "https://github.com/Vegm92/automated-content-channel",
+      "tech": [
+        "TypeScript",
+        "React",
+        "Remotion",
+        "Claude SDK"
+      ],
+      "github": "https://github.com/Vegm92/infographic-video-generator",
+      "screenshot": "screenshots/reelforge.png",
       "_hidden": true
     },
     {
       "name": "AutoAffiliate",
       "version": "1.0.0",
-      "description": "Affiliate content tool that generates product reviews using Claude. Built to explore how AI fits into a real content workflow — handles SEO basics and affiliate link management.",
+      "description": "Affiliate content platform that generates product reviews with Claude. Node pipelines handle content generation, SEO basics and affiliate link management, with OAuth 2.0 for third-party platform auth.",
       "type": "webapp",
-      "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Anthropic AI"],
-      "github": "https://github.com/Vegm92/AutoAffiliate.git",
-      "screenshot": "screenshots/automated-affiliate.png"
-    },
-    {
-      "name": "Glow Dental",
-      "version": "1.0.0",
-      "description": "Modern dental clinic website with appointment booking, service showcase, and patient Portal integration.",
-      "type": "webapp",
-      "tech": ["TypeScript", "Next.js", "Tailwind CSS"],
-      "github": "https://github.com/Vegm92/glow-dental.git",
-      "screenshot": "screenshots/glow-dental.png",
+      "tech": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Anthropic AI"
+      ],
+      "github": "https://github.com/Vegm92/AutoAffiliate",
+      "screenshot": "screenshots/automated-affiliate.png",
       "_hidden": true
     }
   ]
