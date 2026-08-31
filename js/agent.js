@@ -59,7 +59,7 @@ async function callWorker(userMessage) {
 function lockInput() {
   input.disabled = true;
   send.disabled = true;
-  input.placeholder = "Message limit reached — email victorgranda1992@gmail.com";
+  input.placeholder = "That's the message limit. Email victorgranda1992@gmail.com";
 }
 
 async function ask(q) {
@@ -80,7 +80,7 @@ async function ask(q) {
   } catch (err) {
     typing.remove();
     addMsg(
-      "Something went wrong — try again or email victorgranda1992@gmail.com directly.",
+      "Something went wrong. Try again, or just email victorgranda1992@gmail.com.",
       "bot",
     );
     console.error("Gemini error:", err);

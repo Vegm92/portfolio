@@ -142,31 +142,31 @@
       "name": "Mise en Place",
       "version": "0.0.1",
       "_featured": true,
-      "tagline": "AI delivery-note intelligence for restaurants",
+      "tagline": "AI that reads restaurant delivery notes",
       "status": "Private beta",
-      "role": "Solo builder & owner — product, architecture, delivery and ops",
+      "role": "Solo builder and owner: product, code, delivery and support",
       "type": "saas",
-      "description": "A restaurant photographs a supplier delivery note; Gemini extracts the supplier, header fields and every line with per-field confidence, and the owner only confirms what the model was unsure about. From there it becomes a daily queue ranked by euros at stake, spend analytics by item and category, unit-normalised price tracking that catches a supplier's quiet increases, budgets, payment reminders and a chat assistant over the restaurant's own purchasing data. Spanish-first and bilingual, built for independent restaurants and small groups.",
+      "description": "A restaurant takes a photo of a supplier delivery note. The app reads the supplier, the dates and every line on it, then asks the owner to check only the bits it wasn't sure about. From there it turns into a daily to-do list sorted by how much money is on the line, a clear view of what they spend and on what, and price tracking that catches a supplier nudging prices up quietly. There are budgets, payment reminders, and a chat you can ask about your own buying history. Built in Spanish first, for independent restaurants and small groups.",
       "highlights": [
         {
-          "title": "Extraction that degrades gracefully",
-          "body": "Text-PDF fast path, vision fallback and retries on the Gemini call, with per-field confidence driving a guided review of only the fields the model doubted. Structured e-invoices (Facturae 3.2.x, UBL 2.1) and VERI*FACTU QR codes are parsed directly — no AI pass, no cost, no error bar."
+          "title": "When the reading goes wrong, it fails politely",
+          "body": "If the PDF has real text in it, we read that. If it doesn't, we look at the image instead, and try again when the model has an off day. Every field comes back with a confidence score, so the owner only checks what's genuinely doubtful. Official e-invoices and VERI*FACTU QR codes skip the AI entirely: they already come structured, so there's nothing to guess at and nothing to pay for."
         },
         {
           "title": "Comparing prices that aren't comparable",
-          "body": "Suppliers quote the same product as a 5L garrafa, a 12-unit caja or a loose kg. Pack size, units per pack and base unit are resolved per line so everything normalises to €/L, €/kg or €/ud — which is what makes \"this went up 8%\" a true statement rather than a packaging artefact."
+          "body": "One supplier sells oil in a 5L garrafa, the next in a 12-pack, the next by the kilo. Every line gets broken down to a price per litre, per kilo or per unit. Without that, \"this went up 8%\" usually just means the box got smaller."
         },
         {
-          "title": "Multi-tenancy the CI enforces",
-          "body": "Every business table carries restaurant_id and every query goes through forTenant().scope(). A custom lint invariant runs in CI and fails the build on an unscoped tenant query, so the boundary can't quietly rot as the schema grows."
+          "title": "No restaurant can ever see another's data",
+          "body": "Every table is tagged with the restaurant it belongs to, and every query has to go through the check that filters on it. An automated rule refuses to let the code ship if someone writes a query that skips that check, so the wall stays up as the app grows."
         },
         {
-          "title": "Real async infrastructure",
-          "body": "Extraction runs in a separate worker process off a pg-boss queue with dead-letter handling and an ops dashboard. Nightly jobs refresh the analytics materialised views; scheduled jobs drive the weekly AI digest and the overdue-invoice and trial-expiry emails."
+          "title": "The slow work happens in the background",
+          "body": "Reading a note takes a few seconds, so it runs in a queue instead of making anyone sit and wait. Anything that fails gets parked somewhere I can see it. Overnight the numbers are recalculated, and scheduled jobs send the weekly summary plus the nudges about unpaid invoices and trials running out."
         },
         {
           "title": "Shipped like a product, not a demo",
-          "body": "Auth.js credentials + Google OAuth, Stripe billing with per-tier entitlement gating, Sentry, Upstash rate limiting, object storage, feature flags, an admin surface for revenue, health and dead letters — and an invoice bot on WhatsApp as the MVP ingestion channel."
+          "body": "Real logins with email or Google, Stripe subscriptions where the plan you pay for is the plan you actually get, error tracking, rate limits, feature flags, and an admin view where I can see revenue, health and anything stuck. Restaurants can also just WhatsApp a photo of the note, which turned out to be the easiest way in."
         }
       ],
       "metrics": [
@@ -208,26 +208,26 @@
       "gallery": [
         {
           "src": "screenshots/mise-en-place.png",
-          "caption": "Resumen — the day's queue, ranked by euros at stake"
+          "caption": "Resumen: the day's queue, sorted by how much money is at stake"
         },
         {
           "src": "screenshots/mise-en-place-invoices.png",
-          "caption": "Albaranes — review state per delivery note, bulk actions, Excel export"
+          "caption": "Albaranes: where each delivery note stands, with bulk actions and Excel export"
         },
         {
           "src": "screenshots/mise-en-place-spend.png",
-          "caption": "Análisis de gasto — spend by item and supplier category"
+          "caption": "Análisis de gasto: what the money goes on, by item and by supplier"
         },
         {
           "src": "screenshots/mise-en-place-prices.png",
-          "caption": "Seguimiento de precios — unit-normalised price movement per product"
+          "caption": "Seguimiento de precios: how each product's price per unit has moved"
         }
       ]
     },
     {
       "name": "Glow Dental",
       "version": "1.0.0",
-      "description": "Dental clinic management SaaS — appointments, patient records, billing and clinic settings. A pnpm monorepo with a typed contract package shared between frontend and API, built test-first with Jest and Playwright. Next.js front end is complete; the Express/Mongo backend is the next piece.",
+      "description": "Software for running a dental clinic: appointments, patient records, billing and settings. The front end and the API share one set of typed definitions so they can't drift apart, and it was built test-first. The Next.js front end is done; the backend is the next piece.",
       "type": "saas",
       "tech": [
         "Next.js 14",
@@ -244,7 +244,7 @@
     {
       "name": "Automated Content Channel",
       "version": "1.0.0",
-      "description": "Five-agent pipeline that takes a trending topic to a finished vertical video: trend scout, script strategy, visual production, scheduling and analytics. n8n orchestrates the agents on a daily cron, Claude does the reasoning, and the run output is a shot-by-shot production pack.",
+      "description": "Takes a trending topic and turns it into a finished vertical video in five steps: spot the trend, write the script, plan the visuals, schedule the post, then check how it did. It runs itself once a day and hands back a shot-by-shot pack ready to film.",
       "type": "automation",
       "tech": [
         "Python",
@@ -259,7 +259,7 @@
     {
       "name": "BYD Interactive Presentation",
       "version": "1.0.0",
-      "description": "Interactive presentation app built for BYD ATTO 2 DM-i European sales training. Runs full-screen on kiosks with tactile navigation, delivered client-facing from requirements to production.",
+      "description": "A presentation app for BYD's European sales training on the ATTO 2 DM-i. It runs full-screen on touchscreens at the venue, with navigation you can drive with a finger. I took it from the first client conversation through to the day it went live.",
       "type": "client work",
       "tech": [
         "React",
@@ -274,7 +274,7 @@
     {
       "name": "Farmacia Granda",
       "version": "0.1.0",
-      "description": "E-commerce site for a neighbourhood pharmacy, built with Next.js server rendering and a Shadcn UI component system.",
+      "description": "An online shop for a neighbourhood pharmacy, built to load fast and stay easy for the owners to update.",
       "type": "webapp",
       "tech": [
         "Next.js",
@@ -289,7 +289,7 @@
     {
       "name": "This portfolio",
       "version": "2.0.0",
-      "description": "The site you're on. No framework and no build step — plain HTML, ES modules and CSS nesting, with every project and skill rendered from a single config.json. The chat widget in the corner is a Cloudflare Worker grounded on a markdown knowledge base.",
+      "description": "The site you're on. No framework, no build step, just plain HTML, JavaScript and CSS. Every project and skill on the page comes from a single config file I edit by hand.",
       "type": "web",
       "tech": [
         "JavaScript",
@@ -305,7 +305,7 @@
     {
       "name": "Reelforge",
       "version": "1.0.0",
-      "description": "Programmatic video pipeline that renders vertical infographic videos from trending data. Orchestrates multi-step AI work — script, voice, render — through Remotion and the Claude SDK with async job queues and error recovery.",
+      "description": "Turns trending data into vertical infographic videos on its own. The script, the voice and the final render each run as their own job, so one failure doesn't take the whole thing down with it.",
       "type": "automation",
       "tech": [
         "TypeScript",
@@ -320,7 +320,7 @@
     {
       "name": "AutoAffiliate",
       "version": "1.0.0",
-      "description": "Affiliate content platform that generates product reviews with Claude. Node pipelines handle content generation, SEO basics and affiliate link management, with OAuth 2.0 for third-party platform auth.",
+      "description": "Writes product reviews with Claude and handles the unglamorous parts around them: SEO basics, affiliate links, and signing in to the platforms it posts to.",
       "type": "webapp",
       "tech": [
         "React",
