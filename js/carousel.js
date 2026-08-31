@@ -42,12 +42,17 @@ export class Carousel {
 
     // Card content (description length, stack chip count) varies per project,
     // so the container's fixed CSS height doesn't fit every card. Size it to
-    // the active card's real content height instead of guessing a constant.
+    // the tallest of the visible cards (active, plus the partially-visible
+    // prev/next neighbors, which are only scaled down visually - their layout
+    // height is unchanged and can still poke out of a shorter container).
     _syncHeight() {
         if (!this.container) return;
-        const activeItem = this.items[this.currentIdx];
-        if (!activeItem) return;
-        const height = activeItem.scrollHeight;
+        const visible = this.items.filter((item, i) =>
+            i === this.currentIdx ||
+            i === this.currentIdx - 1 || (this.currentIdx === 0 && i === this.items.length - 1) ||
+            i === this.currentIdx + 1 || (this.currentIdx === this.items.length - 1 && i === 0)
+        );
+        const height = Math.max(0, ...visible.map(item => item.scrollHeight));
         if (height > 0) this.container.style.height = `${height}px`;
     }
 
