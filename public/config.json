@@ -239,7 +239,8 @@
         "Playwright"
       ],
       "github": "https://github.com/Vegm92/dentalBI",
-      "screenshot": "screenshots/dentalbi.png"
+      "screenshot": "screenshots/dentalbi.png",
+      "_hidden": true
     },
     {
       "name": "Automated Content Channel",
@@ -301,6 +302,16 @@
       "github": "https://github.com/Vegm92/portfolio",
       "demo": "https://vegm92.github.io/portfolio/",
       "screenshot": "screenshots/portfolio.png"
+    },
+    {
+      "name": "Neon Drift Arena",
+      "version": "1.0.0",
+      "description": "High-octane local couch multiplayer space shooter and kart racer. Combines 2.5D neon graphics, custom audio synthesis, and gamepad/phone-as-controller WebSocket integration.",
+      "type": "game",
+      "tech": ["F#", "Fable", "Three.js", "WebSockets", "Vite"],
+      "github": "https://github.com/Vegm92/neon-drift-arena.git",
+      "demo": "https://neondriftarena.com/",
+      "screenshot": "screenshots/neon-drift-arena.jpg"
     },
     {
       "name": "Reelforge",

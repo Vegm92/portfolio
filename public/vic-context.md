@@ -85,31 +85,29 @@ migrations, 248 test suites, 40 architecture decision records.
 
 These are the repositories Victor pins on his GitHub profile — the work he wants judged.
 
-1. **Glow Dental** (`dentalBI`) — dental clinic management SaaS: appointments, patient records,
-   billing and clinic settings. A pnpm monorepo with a typed contract package shared between the
-   frontend and the API, built test-first with Jest and Playwright. The Next.js 14 front end is
-   complete; the Express/Mongo backend is the next piece, so treat it as a front-end and
-   architecture showcase rather than a running product.
-   Next.js 14, TypeScript, React Query, Redux Toolkit, Sass Modules, Jest, Playwright.
-
-2. **Automated Content Channel** — a five-agent pipeline taking a trending topic to a finished
+1. **Automated Content Channel** — a five-agent pipeline taking a trending topic to a finished
    vertical video: trend scout → script strategy → visual production → scheduling → analytics.
    n8n orchestrates the agents on a daily cron, Claude does the reasoning, and each run produces a
    shot-by-shot production pack. Python, n8n, Claude API, Supabase, Muapi.ai.
 
-3. **BYD Interactive Presentation** — client-facing interactive kiosk app for BYD ATTO 2 DM-i
+2. **BYD Interactive Presentation** — client-facing interactive kiosk app for BYD ATTO 2 DM-i
    European sales training, delivered from requirements to production. Runs full-screen with
    tactile navigation. React, Vite, Tailwind CSS, Swiper.
 
-4. **Farmacia Granda** — e-commerce site for a neighbourhood pharmacy.
+3. **Farmacia Granda** — e-commerce site for a neighbourhood pharmacy.
    Next.js, React, Tailwind CSS, Shadcn UI.
+
+4. **Neon Drift Arena** — High-octane local couch multiplayer space shooter and kart
+   racer. Combines 2.5D neon graphics, custom audio synthesis, and gamepad/phone-as-controller
+   WebSocket integration. Tech: F#, Fable, Three.js, WebSockets, Vite.
 
 5. **This portfolio** — no framework and no build step: plain HTML, ES modules and CSS nesting,
    with every project and skill rendered from a single `config.json`. The chat widget you're
    talking to is a Cloudflare Worker grounded on this document.
    JavaScript, CSS, Cloudflare Workers, Gemini, Playwright.
 
-Earlier work not currently showcased includes **Reelforge** (programmatic video pipeline on
+Earlier work not currently showcased includes **Glow Dental** (dental clinic management SaaS built with
+Next.js 14, TypeScript, React Query, Redux Toolkit, and Sass Modules), **Reelforge** (programmatic video pipeline on
 Remotion and the Claude SDK), **AutoAffiliate** (Claude-generated affiliate content with OAuth 2.0),
 **Fleet Control** (real-time React app his own events crew used across a 21-vehicle fleet) and a
 **Gmail automation suite** in Google Apps Script. Mention these only if someone asks for more
@@ -161,6 +159,46 @@ Practitioner planned.
 
 ---
 
+<<<<<<< HEAD
+## Projects (6 shipped)
+
+1. **BYD Interactive Presentation** — Interactive kiosk app for BYD ATTO 2 DM-i European
+   Sales Training. Tech: React, Vite, Tailwind CSS, Swiper.
+
+2. **Farmacia Granda** — Modern e-commerce platform for a neighborhood pharmacy.
+   Tech: Next.js, React, Tailwind CSS, Shadcn UI.
+
+3. **Mise en Place** — Smart kitchen/recipe manager powered by Gemini AI — extracts
+   structured data from text or images. Tech: SvelteKit, Drizzle ORM, SQLite, Gemini AI.
+
+4. **Reelforge** — AI-powered programmatic video pipeline using Remotion; auto-creates
+   vertical infographics from trending data. Tech: TypeScript, React, Remotion, Claude SDK.
+
+5. **Neon Drift Arena** — High-octane local couch multiplayer space shooter and kart
+   racer. Combines 2.5D neon graphics, custom audio synthesis, and gamepad/phone-as-controller
+   WebSocket integration. Tech: F#, Fable, Three.js, WebSockets, Vite.
+
+6. **Automated Content Channel** — Headless video pipeline using multi-agent swarms for
+   research, scripting, and editing. Tech: Python, Claude API, Muapi.ai.
+
+---
+
+## AI & Automation
+
+Victor has used Claude SDK and Gemini API in several personal projects — adding AI
+features like structured data extraction, script generation, and content automation.
+He's comfortable reading docs, wiring APIs, and getting things working, but considers
+himself still learning in this area.
+
+---
+
+## Victor's Strengths
+
+Victor is a quick learner who picks things up by building. His base is the MERN stack
+(MongoDB, Express, React, Node.js) with TypeScript throughout. He's shipped several
+personal and family projects from scratch — frontend to backend to deployment. No
+professional experience yet, but genuinely motivated and easy to work with.
+=======
 ## What he's best at
 
 Taking an ambiguous business problem and turning it into a system that runs on its own.
@@ -170,6 +208,7 @@ in front of a client, which is why the solutions-engineering and implementation 
 him well. Mise en Place is the proof: a real multi-tenant SaaS with billing, background
 workers, CI-enforced invariants and paying-customer infrastructure, built and operated
 solo.
+>>>>>>> main
 
 ---
 

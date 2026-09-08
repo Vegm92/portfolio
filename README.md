@@ -23,13 +23,13 @@ The carousel mirrors the repositories pinned on the GitHub profile.
 
 | Project | Type | Stack |
 |---------|------|-------|
-| [Glow Dental](https://github.com/Vegm92/dentalBI) | Clinic SaaS | Next.js 14, TypeScript, React Query, Jest, Playwright |
-| [Automated Content Channel](https://github.com/Vegm92/automated-content-channel) | Automation | Python, n8n, Claude API, Supabase |
+| [Automated Content Channel](https://github.com/Vegm92/automated-content-channel) | Automation | Python, n8n, Claude API, Supabase | 
 | [BYD Interactive Presentation](https://github.com/Vegm92/byd) | Client work | React, Vite, Tailwind, Swiper |
 | [Farmacia Granda](https://github.com/Vegm92/farmacia-granda-web-rework) | E-commerce | Next.js, React, Tailwind, Shadcn |
 | [This portfolio](https://github.com/Vegm92/portfolio) | Web | JavaScript, CSS, Cloudflare Workers |
+| [Neon Drift Arena](https://github.com/Vegm92/neon-drift-arena) | Game | F#, Fable, Three.js, WebSockets, Vite |
 
-Reelforge and AutoAffiliate stay in `config.json` under `_hidden` — unpin something and swap
+Glow Dental, Reelforge, and AutoAffiliate stay in `config.json` under `_hidden` — unpin something and swap
 the flags to bring them back.
 
 ## Structure
