@@ -4,6 +4,7 @@ export class Carousel {
 
     constructor(trackSelector, prevBtnSelector, nextBtnSelector, countSelector) {
         this.track = document.querySelector(trackSelector);
+        this.container = this.track?.closest(".carousel-container") ?? null;
         this.prevBtn = document.querySelector(prevBtnSelector);
         this.nextBtn = document.querySelector(nextBtnSelector);
         this.countSpan = document.querySelector(countSelector);
@@ -35,6 +36,24 @@ export class Carousel {
             else if (i === this.currentIdx + 1 || (this.currentIdx === this.items.length - 1 && i === 0)) cls += " next";
             item.className = cls;
         });
+
+        this._syncHeight();
+    }
+
+    // Card content (description length, stack chip count) varies per project,
+    // so the container's fixed CSS height doesn't fit every card. Size it to
+    // the tallest of the visible cards (active, plus the partially-visible
+    // prev/next neighbors, which are only scaled down visually - their layout
+    // height is unchanged and can still poke out of a shorter container).
+    _syncHeight() {
+        if (!this.container) return;
+        const visible = this.items.filter((item, i) =>
+            i === this.currentIdx ||
+            i === this.currentIdx - 1 || (this.currentIdx === 0 && i === this.items.length - 1) ||
+            i === this.currentIdx + 1 || (this.currentIdx === this.items.length - 1 && i === 0)
+        );
+        const height = Math.max(0, ...visible.map(item => item.scrollHeight));
+        if (height > 0) this.container.style.height = `${height}px`;
     }
 
     _navigate(nextIdx) {
@@ -68,6 +87,15 @@ export class Carousel {
     initEvents() {
         if (this.prevBtn) this.prevBtn.addEventListener("click", () => this.prev());
         if (this.nextBtn) this.nextBtn.addEventListener("click", () => this.next());
+
+        // Re-measure on resize (text reflows at narrower widths) and once
+        // webfonts finish swapping in, since either can change card height.
+        let resizeTimer = null;
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => this._syncHeight(), 120);
+        }, { passive: true });
+        document.fonts?.ready?.then(() => this._syncHeight());
 
         let touchStartX = 0;
         let touchEndX = 0;

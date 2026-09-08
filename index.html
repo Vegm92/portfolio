@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Victor Granda — Full-stack Developer</title>
+        <title>Victor Granda · Full Stack Developer + AI</title>
         <meta
             name="description"
-            content="Victor Granda — full-stack developer who builds AI-native products end-to-end. TypeScript, Rust, Python, Claude SDK."
+            content="Victor Granda, a full stack developer in Barcelona who puts AI to work in everyday tools. I built and still run Mise en Place, an app that reads restaurant delivery notes so nobody has to type them in. TypeScript, Node.js, SvelteKit, PostgreSQL, Gemini."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700&family=Robotika:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
         />
         <link rel="stylesheet" href="css/responsive.css" />
         <link
@@ -29,50 +29,59 @@
     </head>
 
     <body>
-        <div class="mesh">
-            <div class="orb"></div>
-        </div>
-        <div class="grid-bg"></div>
-        <div class="grain"></div>
-
-        <div class="shell">
-            <main>
-                <nav class="top">
-                    <div class="brand">
-                        <span class="brand-dot"></span>
-                        <span class="brand-name">Victor Granda</span>
-                    </div>
-                    <div class="nav-links">
-                        <a href="#home">Home</a>
-                        <a href="#carousel-projects">Projects</a>
-                        <a href="#stack">Stack</a>
-                        <a href="#about">About</a>
-                        <a href="#contact">Contact</a>
-                    </div>
+        <div class="layout">
+            <aside class="sidebar">
+                <div class="sidebar-brand">VICTOR<br />GRANDA</div>
+                <div class="sidebar-role mono">FULL STACK DEV + AI</div>
+                <nav class="side-nav">
+                    <a href="#home">Home</a>
+                    <a href="#featured">Flagship</a>
+                    <a href="#carousel-projects">Work</a>
+                    <a href="#stack">Stack</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </nav>
+                <div class="sidebar-meta">
+                    BARCELONA<br />REMOTE / HYBRID<br />2026
+                </div>
+            </aside>
 
+            <main class="content">
                 <section id="home" class="hero">
                     <div>
+                        <div class="hero-eyebrow mono">
+                            // Full stack developer + AI solutions
+                        </div>
                         <h1 class="lead">
-                            <span class="lead-row"
-                                >Building data-driven tools</span
-                            >
+                            <span class="lead-row">SYSTEMS THAT KEEP RUNNING</span>
                             <span class="lead-row"
                                 ><span class="em"
-                                    >for business operations</span
+                                    >WHEN NOBODY&rsquo;S WATCHING</span
                                 ></span
                             >
                         </h1>
                         <p class="hero-sub">
-                            Full-stack developer building automation workflows
-                            and BI tools for business operations
+                            Barcelona-based, freelance since 2022. I connect
+                            apps, data and AI so the boring work happens on its
+                            own. One of those is <b>Mise en Place</b>, an app
+                            that reads restaurant delivery notes. I built it and
+                            I still run it, on my own.
                         </p>
                     </div>
                     <div class="hero-meta">
                         <div class="meta-row">
                             <div class="meta-k">Focus</div>
                             <div class="meta-v mono">
-                                Full-stack · automation · BI
+                                Full stack dev · AI solutions · automation
+                            </div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-k">Building</div>
+                            <div class="meta-v">
+                                <a class="meta-link" href="#featured"
+                                    >Mise en Place</a
+                                >
+                                <span class="dim">(private beta)</span>
                             </div>
                         </div>
                         <div class="meta-row">
@@ -83,16 +92,61 @@
                             <div class="meta-k">Location</div>
                             <div class="meta-v">
                                 <span class="status-dot"></span>Barcelona
-                                &mdash; Remote / Hybrid
+                                &middot; Remote or hybrid
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <section id="featured" class="featured">
+                    <div class="section-head">
+                        <h2>Flagship <span class="serif">build</span></h2>
+                        <span class="idx">01 / 03 &middot; What I&rsquo;m building now</span>
+                    </div>
+
+                    <article class="fp" id="featuredProject">
+                        <figure class="fp-shot">
+                            <div
+                                class="fp-gallery"
+                                id="fpGallery"
+                                aria-label="Mise en Place screens"
+                            ></div>
+                        </figure>
+
+                        <div class="fp-main">
+                            <div class="fp-head">
+                                <span class="fp-status" id="fpStatus"></span>
+                                <span class="fp-type mono" id="fpType"></span>
+                            </div>
+                            <h3 class="fp-name" id="fpName"></h3>
+                            <p class="fp-tagline" id="fpTagline"></p>
+                            <p class="fp-desc" id="fpDesc"></p>
+
+                            <div class="fp-role">
+                                <span class="meta-k">Role</span>
+                                <span id="fpRole"></span>
+                            </div>
+
+                            <div class="fp-metrics" id="fpMetrics"></div>
+
+                            <div class="fp-stack" id="fpStack"></div>
+
+                            <div class="fp-actions" id="fpActions"></div>
+                        </div>
+
+                        <div class="fp-highlights">
+                            <h4 class="fp-highlights-title mono">
+                                How it works
+                            </h4>
+                            <ol class="fp-list" id="fpHighlights"></ol>
+                        </div>
+                    </article>
+                </section>
+
                 <section id="carousel-projects">
                     <div class="section-head" style="padding-bottom: 0">
-                        <h2>Selected <span class="serif">projects</span></h2>
-                        <span class="idx" id="carouselIdx">01 / 00</span>
+                        <h2>More <span class="serif">work</span></h2>
+                        <span class="idx">02 / 03 &middot; <span id="carouselIdx">01 / 00</span></span>
                     </div>
                     <div class="carousel-section">
                         <div class="carousel-container">
@@ -143,17 +197,19 @@
                 <section id="stack">
                     <div class="section-head">
                         <h2>The <span class="serif">stack</span></h2>
-                        <span class="idx">02 / 03 — Tools I reach for</span>
+                        <span class="idx">03 / 03 &middot; What I build with</span>
                     </div>
                     <div class="stack">
                         <div class="stack-intro">
                             <p class="serif">
-                                AI-accelerated,<br />not AI-dependent.
+                                AI helps me go faster.<br />It doesn't do the
+                                thinking.
                             </p>
                             <p>
-                                I use AI as leverage across every layer — from
-                                data models to pipelines to interfaces. Here's
-                                what I reach for in 2025.
+                                I lean on AI at every layer, from the database
+                                up to the screen. The decisions are still mine
+                                to make and mine to explain. Here's what I'm
+                                building with in 2026.
                             </p>
                         </div>
                         <div class="stack-groups" id="stack-grid">
@@ -169,26 +225,40 @@
                     <div class="about-grid">
                         <div class="about-text">
                             <h3>
-                                Self-taught,
-                                <span class="serif">project-driven.</span>
+                                I build it, ship it, and
+                                <span class="serif">run it.</span>
                             </h3>
                             <p>
-                                I'm Victor — a junior developer based in
-                                Barcelona. I don't have professional experience
-                                yet, but I've been building real things since
-                                2021: websites for family businesses, personal
-                                tools, and side projects that actually get used.
+                                I'm Victor, a full stack developer in
+                                Barcelona, freelance since 2022. Most of my work
+                                lives in the space between systems: getting one
+                                app to talk to another, moving data where it
+                                needs to go, and making sure it all still works
+                                on a Sunday morning when nobody's around to
+                                notice.
                             </p>
                             <p>
-                                I work across the stack — <b>React</b>,
-                                <b>TypeScript</b>, and <b>Python</b> on the
-                                daily. My base is <b>MERN</b> (MongoDB, Express,
-                                React, Node), with <b>Next.js</b> and
-                                <b>SvelteKit</b> in past projects. I've used
-                                <b>Claude SDK</b> and <b>Gemini</b> to add AI
-                                features to several builds. I pick things up
-                                fast and I'm looking for a team where I can
-                                grow.
+                                Day to day that's <b>Node.js</b> and
+                                <b>TypeScript</b> on the backend,
+                                <b>SvelteKit</b> or <b>React</b> on the front,
+                                <b>PostgreSQL</b> underneath, and
+                                <b>Gemini</b> or <b>Claude</b> when a model
+                                genuinely does the job better than plain rules
+                                would. Mise en Place is where all of it comes
+                                together. That one is mine top to bottom, from
+                                the database to the billing to the call when
+                                something breaks at 9pm.
+                            </p>
+                            <p>
+                                I've spent plenty of time in front of clients
+                                too. I built and delivered a sales training app
+                                for <b>BYD</b>'s European rollout, and I run the
+                                operations team at premium
+                                <b>EV brand events</b>, where I wrote the live
+                                tracking app my own crew used to keep 21 cars in
+                                the right place at the right time. I trained at
+                                ISDI Coders in 2021. Spanish is my first
+                                language, English my working one.
                             </p>
                         </div>
                         <div class="about-stats">
@@ -217,8 +287,14 @@
                                 </div>
                             </div>
                             <div class="meta-row">
+                                <div class="meta-k">Experience</div>
+                                <div class="meta-v">4+ years, freelance</div>
+                            </div>
+                            <div class="meta-row">
                                 <div class="meta-k">Open to</div>
-                                <div class="meta-v">Full-time / Contract</div>
+                                <div class="meta-v">
+                                    Full stack · AI solutions · Contract
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -232,11 +308,12 @@
                                 <span class="serif">real?</span> Let's talk.
                             </h3>
                             <p>
-                                I'm open to full-time roles, contracts, or
-                                interesting collaborations — AI-native products,
-                                full-stack builds, or anything at the
-                                intersection of code and intelligence. Reach out
-                                with a rough idea and I'll reply within 48
+                                I'm open to full stack and AI roles, full-time
+                                or contract, and to freelance work: integrations,
+                                automation, AI products, or anything that sits
+                                between the code and how a business actually
+                                runs day to day. Send me a rough idea, even a
+                                messy one, and I'll get back to you within 48
                                 hours.
                             </p>
                             <div class="contact-actions">
@@ -427,108 +504,5 @@
         </template>
 
         <script type="module" src="js/main.js"></script>
-        <script type="module" src="js/agent.js"></script>
-
-        <!-- ————— Agent chatbot ————— -->
-        <div class="agent-root" id="agent">
-            <dialog class="agent-panel" aria-label="Portfolio assistant">
-                <div class="agent-head">
-                    <div class="orb-sm"></div>
-                    <div>
-                        <div class="agent-title">Ask about Victor</div>
-                        <div class="agent-sub">
-                            <span class="dot"></span> online · usually answers
-                            instantly
-                        </div>
-                    </div>
-                    <button
-                        class="agent-close"
-                        aria-label="Close"
-                        id="agent-close"
-                    >
-                        <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path d="M6 6l12 12M18 6L6 18" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="agent-body" id="agent-body">
-                    <div class="msg bot">
-                        Hey — I'm <b>Vic</b>, Victor's portfolio agent. Ask me
-                        about his <b>tech stack</b>, <b>projects</b>, or whether
-                        he's a fit for what you're building.
-                    </div>
-                </div>
-
-                <div class="agent-suggest" id="agent-suggest">
-                    <button>Are you available to hire?</button>
-                    <button>What projects have you built?</button>
-                    <button>What's your tech stack?</button>
-                    <button>How do I contact you?</button>
-                    <button>What AI tools do you use?</button>
-                    <button>What are you best at?</button>
-                </div>
-
-                <div class="agent-input-wrap">
-                    <input
-                        class="agent-input"
-                        id="agent-input"
-                        type="text"
-                        placeholder="Ask anything about my work…"
-                        autocomplete="off"
-                    />
-                    <button
-                        class="agent-send"
-                        id="agent-send"
-                        aria-label="Send"
-                    >
-                        <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2.2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path d="M5 12h14M13 6l6 6-6 6" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="agent-foot">
-                    <span
-                        style="
-                            width: 6px;
-                            height: 6px;
-                            border-radius: 50%;
-                            background: var(--emerald-2);
-                            box-shadow: 0 0 6px var(--emerald-2);
-                            display: inline-block;
-                        "
-                    ></span>
-                    Powered by Gemini 1.5 Flash
-                </div>
-            </dialog>
-
-            <button
-                class="agent-fab"
-                id="agent-fab"
-                aria-label="Open assistant"
-            >
-                <span class="ring"></span>
-                <span class="orb2"></span>
-            </button>
-            <div class="agent-label">
-                Ask Vic, my portfolio agent <span class="mono">⌘K</span>
-            </div>
-        </div>
     </body>
 </html>

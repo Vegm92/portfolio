@@ -18,6 +18,10 @@ function mockWorkerError(page) {
   );
 }
 
+// Widget is temporarily removed from index.html — backend worker is failing
+// in production (see tracking issue). Re-enable once the worker is fixed.
+test.describe.skip("agent widget (disabled pending backend fix)", () => {
+
 test.beforeEach(async ({ page }) => {
   await page.goto("/");
 });
@@ -162,4 +166,6 @@ test("limit message is shown after 10 messages", async ({ page }) => {
   await expect(page.locator("#agent-body .msg.bot").last()).toContainText(
     "message limit"
   );
+});
+
 });

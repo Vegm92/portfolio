@@ -17,6 +17,144 @@ async function loadConfig() {
   }
 }
 
+function renderFeatured() {
+  const root = $("#featuredProject");
+  if (!root || !configData) return;
+
+  const project = (configData.projects || []).find((p) => p._featured);
+  if (!project) {
+    const section = $("#featured");
+    if (section) section.hidden = true;
+    return;
+  }
+
+  const setText = (sel, value) => {
+    const el = root.querySelector(sel);
+    if (el) el.textContent = value || "";
+  };
+
+  setText("#fpName", project.name);
+  setText("#fpTagline", project.tagline);
+  setText("#fpDesc", project.description);
+  setText("#fpRole", project.role);
+  setText("#fpType", project.type);
+
+  const status = root.querySelector("#fpStatus");
+  if (status) {
+    status.textContent = project.status || "";
+    status.hidden = !project.status;
+  }
+
+  const galleryRoot = root.querySelector("#fpGallery");
+
+  const gallery = project.gallery?.length
+    ? project.gallery
+    : project.screenshot
+      ? [{ src: project.screenshot, caption: "" }]
+      : [];
+
+  if (galleryRoot) {
+    if (gallery.length) {
+      galleryRoot.replaceChildren(
+        ...gallery.map((frame) => {
+          const fig = document.createElement("figure");
+          fig.className = "fp-frame";
+          const img = document.createElement("img");
+          img.src = `public/${frame.src}`;
+          img.alt = `${project.name}: ${frame.caption || "product screenshot"}`;
+          img.loading = "lazy";
+          img.decoding = "async";
+          img.addEventListener("error", () => fig.remove());
+          fig.appendChild(img);
+          if (frame.caption) {
+            const caption = document.createElement("figcaption");
+            caption.textContent = frame.caption;
+            fig.appendChild(caption);
+          }
+          return fig;
+        }),
+      );
+    } else {
+      galleryRoot.closest(".fp-shot")?.classList.add("fp-shot--empty");
+    }
+  }
+
+  const metrics = root.querySelector("#fpMetrics");
+  if (metrics) {
+    metrics.replaceChildren(
+      ...(project.metrics || []).map((m) => {
+        const cell = document.createElement("div");
+        cell.className = "fp-metric";
+        const value = document.createElement("span");
+        value.className = "fp-metric-value mono";
+        value.textContent = m.value;
+        const label = document.createElement("span");
+        label.className = "fp-metric-label";
+        label.textContent = m.label;
+        cell.append(value, label);
+        return cell;
+      }),
+    );
+  }
+
+  const stack = root.querySelector("#fpStack");
+  if (stack) {
+    stack.replaceChildren(
+      ...(project.tech || []).map((t) => {
+        const chip = document.createElement("span");
+        chip.className = "chip";
+        chip.textContent = t;
+        return chip;
+      }),
+    );
+  }
+
+  const highlights = root.querySelector("#fpHighlights");
+  if (highlights) {
+    highlights.replaceChildren(
+      ...(project.highlights || []).map((h) => {
+        const li = document.createElement("li");
+        const title = document.createElement("h5");
+        title.textContent = h.title;
+        const body = document.createElement("p");
+        body.textContent = h.body;
+        li.append(title, body);
+        return li;
+      }),
+    );
+  }
+
+  const actions = root.querySelector("#fpActions");
+  if (actions) {
+    const links = [];
+    if (project.demo) {
+      links.push({
+        href: project.demo,
+        label: project.demoLabel || "Live site",
+        className: "btn primary",
+      });
+    }
+    if (project.github) {
+      links.push({
+        href: project.github,
+        label: "Source on GitHub",
+        className: "btn ghost",
+      });
+    }
+    actions.replaceChildren(
+      ...links.map(({ href, label, className }) => {
+        const a = document.createElement("a");
+        a.className = className;
+        a.href = href;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = `${label} \u2197`;
+        return a;
+      }),
+    );
+  }
+}
+
 async function renderProjects() {
   const track = $("#carouselTrack");
   if (!track) return;
@@ -30,8 +168,8 @@ async function renderProjects() {
   try {
     const data = configData;
 
-    const visibleProjects = data.projects.filter(p => !p._hidden);
-    const numProjects = visibleProjects.length;
+    const shippedProjects = data.projects.filter((p) => !p._hidden);
+    const numProjects = shippedProjects.length;
     if ($("#aboutShipped"))
       $("#aboutShipped").textContent = `${numProjects} projects`;
 
@@ -67,7 +205,9 @@ async function renderProjects() {
     if ($("#aboutLanguages")) $("#aboutLanguages").textContent = coreStack;
     if ($("#aboutAiTools")) $("#aboutAiTools").textContent = topAi;
 
-    const projects = (data.projects || []).filter(p => !p._hidden);
+    const projects = (data.projects || []).filter(
+      (p) => !p._hidden && !p._featured,
+    );
     track.innerHTML = "";
 
     const carousel = new Carousel(
@@ -89,16 +229,17 @@ async function renderProjects() {
         img.alt = project.name;
         img.width = 320;
         img.height = 180;
-        img.loading = "eager";
-        img.onload = () => {
-          shotDiv.innerHTML = "";
-          shotDiv.appendChild(img);
-        };
-        img.onerror = () => {
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.addEventListener("load", () => shotDiv.classList.add("has-shot"));
+        img.addEventListener("error", () => {
+          img.remove();
+          shotDiv.classList.remove("has-shot");
           shotDiv.querySelector(".shot-filename").textContent =
             `${project.name.toLowerCase()}.png`;
-        };
+        });
         img.src = `public/${project.screenshot}`;
+        shotDiv.appendChild(img);
       } else {
         clone.querySelector(".shot-filename").textContent =
           `${project.name.toLowerCase()}.png`;
@@ -200,6 +341,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (track) track.innerHTML = '<div style="color: #ffb547;">Failed to load projects. Please refresh.</div>';
     return;
   }
+  renderFeatured();
   renderProjects();
   loadStack();
   const footerYear = $("#footerYear");
