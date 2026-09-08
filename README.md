@@ -19,8 +19,8 @@ Full-stack developer portfolio showcasing AI-accelerated projects built end-to-e
 | [Farmacia Granda](https://github.com/Vegm92/farmacia-granda-web-rework.git) | E-commerce | Next.js, React, Tailwind, Shadcn |
 | [Mise en Place](https://github.com/Vegm92/mise-en-place-sk.git) | Web App | SvelteKit, Drizzle ORM, SQLite, Gemini |
 | [Reelforge](https://github.com/Vegm92/infographic-video-generator.git) | Video Pipeline | TypeScript, Remotion, Claude SDK |
+| [Neon Drift Arena](https://github.com/Vegm92/neon-drift-arena.git) | Game | F#, Fable, Three.js, WebSockets, Vite |
 | [Automated Content Channel](https://github.com/Vegm92/automated-content-channel.git) | Automation | Python, Claude API, Muapi.ai |
-| [AutoAffiliate](https://github.com/Vegm92/AutoAffiliate.git) | Marketing | React, TypeScript, Vite, Anthropic |
 
 ## Local Development
 

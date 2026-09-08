@@ -39,7 +39,7 @@ Best contact: victorgranda1992@gmail.com
 
 ---
 
-## Projects (7 shipped)
+## Projects (6 shipped)
 
 1. **BYD Interactive Presentation** — Interactive kiosk app for BYD ATTO 2 DM-i European
    Sales Training. Tech: React, Vite, Tailwind CSS, Swiper.
@@ -53,15 +53,12 @@ Best contact: victorgranda1992@gmail.com
 4. **Reelforge** — AI-powered programmatic video pipeline using Remotion; auto-creates
    vertical infographics from trending data. Tech: TypeScript, React, Remotion, Claude SDK.
 
-5. **Automated Content Channel** — Headless video pipeline using multi-agent swarms for
+5. **Neon Drift Arena** — High-octane local couch multiplayer space shooter and kart
+   racer. Combines 2.5D neon graphics, custom audio synthesis, and gamepad/phone-as-controller
+   WebSocket integration. Tech: F#, Fable, Three.js, WebSockets, Vite.
+
+6. **Automated Content Channel** — Headless video pipeline using multi-agent swarms for
    research, scripting, and editing. Tech: Python, Claude API, Muapi.ai.
-
-6. **AutoAffiliate** — AI affiliate marketing platform generating product reviews with
-   Claude. Features SEO optimization and automated content creation.
-   Tech: React, TypeScript, Vite, Tailwind CSS, Anthropic AI.
-
-7. **Glow Dental** — Dental clinic website with appointment booking and service showcase.
-   Tech: TypeScript, Next.js, Tailwind CSS.
 
 ---
 

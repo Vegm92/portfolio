@@ -133,7 +133,17 @@
       "github": "https://github.com/Vegm92/infographic-video-generator.git",
       "screenshot": "screenshots/reelforge.png"
     },
-{
+    {
+      "name": "Neon Drift Arena",
+      "version": "1.0.0",
+      "description": "High-octane local couch multiplayer space shooter and kart racer. Combines 2.5D neon graphics, custom audio synthesis, and gamepad/phone-as-controller WebSocket integration.",
+      "type": "game",
+      "tech": ["F#", "Fable", "Three.js", "WebSockets", "Vite"],
+      "github": "https://github.com/Vegm92/neon-drift-arena.git",
+      "demo": "https://neondriftarena.com/",
+      "screenshot": "screenshots/neon-drift-arena.jpg"
+    },
+    {
       "name": "Automated Content Channel",
       "version": "1.0.0",
       "description": "Headless video production pipeline using multi-agent swarms. Orchestrates research, scriptwriting, and editing into an end-to-end automated flow.",
@@ -149,7 +159,8 @@
       "type": "webapp",
       "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Anthropic AI"],
       "github": "https://github.com/Vegm92/AutoAffiliate.git",
-      "screenshot": "screenshots/automated-affiliate.png"
+      "screenshot": "screenshots/automated-affiliate.png",
+      "_hidden": true
     },
     {
       "name": "Glow Dental",
